@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Model;
+
+use App\User;
+use Illuminate\Database\Eloquent\Model;
+
+class Licences extends Model
+{
+    protected $guarded = [];
+
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function plan() {
+        return $this->belongsTo(Plans::class, 'plan_id');
+    }
+}
