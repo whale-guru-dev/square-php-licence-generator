@@ -24,8 +24,12 @@
 
     <![endif]-->
     <style>
+
+        @media (min-width: 782px) {
+
+        }
         section {
-            padding: 80px;
+            padding: 50px;
         }
 
         #first {
@@ -87,17 +91,13 @@
         #third {
             border-radius: 0px;
             background: rgba(6, 81, 173, 0.996);
-            height: 835px;
             min-height: 50px;
             border: 0px none rgba(3, 150, 255, 0.996);
-
-            display: flex;
-            align-items: center;
         }
 
         #third h1 {
             font-family: "Muli Black", sans-serif;
-            font-size: 80px;
+            font-size: 50px;
             font-weight: bold;
             display: block;
             line-height: 1.1em;
@@ -118,7 +118,6 @@
         #forth {
             border-radius: 0px;
             background: rgba(13, 13, 13, 0.996);
-            height: 380px;
             min-height: 200px;
             border: 0px none rgb(0, 0, 0);
 
@@ -153,7 +152,6 @@
         #fifth {
             border-radius: 0px;
             background: rgba(27, 37, 49, 0.996);
-            height: 1155px;
             min-height: 200px;
             border: 0px none rgb(0, 0, 0);
         }
@@ -202,7 +200,6 @@
         }
 
         #fifth .faq-text {
-            width: 523px;
             left: 19.5px;
             padding: 15px;
             margin: 0px auto;
@@ -246,7 +243,7 @@
 
 
 <section id="first">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row text-center">
             <h1 class="text-uppercase">never miss another client again</h1>
 
@@ -260,7 +257,7 @@
 </section>
 
 <section id="second">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row text-center">
             <h1 class="text-uppercase"><span class="blue-text">WISH CLIENTS WOULD CALL</span>, INSTEAD OF REPLYING IN
                 ZILLOW?</h1>
@@ -272,14 +269,14 @@
                         src="https://www.youtube.com/embed/mX-Kui9RUJE?&start=0&end=0" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen="allowfullscreen" class=" video embed-responsive-item"
-                        style="border-radius: 0px; border: 0px none rgb(0, 0, 0);"></iframe>
+                        style="border-radius: 0px; border: 0px none rgb(0, 0, 0);max-width: 100%;"></iframe>
             </div>
         </div>
     </div>
 </section>
 
 <section id="third">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row text-center">
             <h1 class="text-uppercase">THE ZILLOW AR HAS ONE JOB!
                 <span class="blue-text">MAKE REALTORS</span> "<span class="blue-text">MORE MONEY</span>"</h1>
@@ -288,7 +285,7 @@
 </section>
 
 <section id="forth">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row text-center">
             <div class="">
                 <h1 class="text-uppercase"><span class="purple-text">try free</span> - no credit card required</h1>
@@ -299,7 +296,7 @@
 </section>
 
 <section id="fifth">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-4 faq-header">
                 <h1 class="faq">Frequently asked questions</h1>
@@ -348,7 +345,7 @@
 </section>
 
 <section id="footer">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-9"></div>
             <div class="col-md-3 footer-contact-info">
