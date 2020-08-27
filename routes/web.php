@@ -45,6 +45,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/user/balance/{user}', 'admin\UserController@blupdate')->name('user.balance');
     Route::put('/user/status/{user}', 'admin\UserController@statupdate')->name('user.status');
     Route::get('/user-translog', 'admin\UserController@transLog')->name('users.transactions');
+    Route::get('/users/create', 'admin\UserController@createUserIndex')->name('users.create.get');
+    Route::post('/users/create', 'admin\UserController@createUser')->name('users.create');
 
     //Transaction Management
     Route::get('/transaction-deposit', 'AdminTransactionController@deposit')->name('transaction.deposit');

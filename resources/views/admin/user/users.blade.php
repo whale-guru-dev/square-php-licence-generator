@@ -11,13 +11,20 @@
                         <span class="caption-subject bold uppercase"> User List</span>
                     </div>
                     <div class="actions">
-                        <form method="POST" class="form-inline" action="{{route('search.users')}}">
-                            {{csrf_field()}}
-                            <input type="text" name="search" class="form-control" placeholder="Search">
-                            <button class="btn btn-outline btn-circle btn-sm green" type="submit"><i
-                                    class="fa fa-search"></i></button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="{{route('users.create.get')}}" class="btn btn-outline btn-circle btn-sm blue">Create New User</a>
+                            </div>
+                            <div class="col-md-6">
+                                <form method="POST" class="form-inline" action="{{route('search.users')}}">
+                                    {{csrf_field()}}
+                                    <input type="text" name="search" class="form-control" placeholder="Search">
+                                    <button class="btn btn-outline btn-circle btn-sm green" type="submit"><i
+                                            class="fa fa-search"></i></button>
 
-                        </form>
+                                </form>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

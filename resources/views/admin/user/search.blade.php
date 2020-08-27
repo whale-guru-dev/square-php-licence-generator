@@ -15,7 +15,7 @@
                         {{csrf_field()}}
                         <input type="text" name="search" class="form-control" placeholder="Search" required>
                         <button class="btn btn-outline btn-circle btn-sm green" type="submit"> <i class="fa fa-search"></i></button>
-                                        
+
                     </form>
                 </div>
 
@@ -26,20 +26,17 @@
                 <thead>
                     <tr>
                         <th>
-                            Name 
+                            Name
                         </th>
                         <th>
                             Email
                         </th>
                         <th>
-                            Username
+                            Mac Address
                         </th>
                         <th>
-                             Phone
+                             Plan
                         </th>
-                       	<th>
-                       		Balance
-                       	</th>                       	
                         <th>
                             Details
                         </th>
@@ -49,33 +46,30 @@
 		 	@foreach($users as $user)
                      <tr>
                      	<td>
-                        	{{$user->fName.' '.$user->lName}}
+                        	{{$user->name}}
                         </td>
                         <td>
-                            {{$user->email}}      
-                        </td> 
-                        <td>
-                            {{$user->username}}      
+                            {{$user->email}}
                         </td>
                         <td>
-                            {{$user->mobile}}
+                            {{$user->mac}}
                         </td>
                         <td>
-                        	{{number_format(floatval($user->balance), $gnl->decima, '.', '')}} {{$gnl->cursym}}
+                            {{$user->licence ?$user->licence->plan->name: ''}}
                         </td>
                         <td>
                         	<a href="{{route('user.single', $user->id)}}" class="btn btn-outline btn-circle btn-sm green">
                              <i class="fa fa-eye"></i> View </a>
                         </td>
                      </tr>
- 			@endforeach 
+ 			@endforeach
  			<tbody>
            </table>
         </div>
-			
+
 			</div><!-- row -->
 			</div>
 		</div>
-	</div>		
+	</div>
 </div>
 @endsection
