@@ -84,7 +84,8 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required | email | unique:users',
             'mac' => 'required | unique:users',
-            'password' => 'required | min:5'
+            'password' => 'required | min:5',
+            'plan' => 'required | number'
         ]);
 
         $user = User::create([

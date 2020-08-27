@@ -21,7 +21,6 @@
                                 <hr>
                                 <div class="col-12">
                                     <ul>
-                                        <li>{{$eachPlan->description}}</li>
                                         <li>Price: ${{$eachPlan->price}}</li>
                                     </ul>
 
@@ -58,7 +57,6 @@
                         <div class="col-12">
                             <ul>
                                 <li>Name: {{$licence->plan->name}}</li>
-                                <li>Description: {{$licence->plan->description}}</li>
                                 <li>Price: $ {{$licence->plan->price}}</li>
                                 <li>Purchased: {{$licence->created_at}}</li>
                                 <li>Expired: {{$licence->expired}}</li>

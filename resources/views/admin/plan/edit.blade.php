@@ -25,13 +25,6 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Description:</strong>
-                                <input type="text" name="description" value="{{$plan->description}}" class="form-control" placeholder="Plan Description"/>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
                                 <strong>Price:</strong>
                                 <input class="form-control" value="{{$plan->price}}" type="text" name="price" placeholder="Price"/>
                             </div>
@@ -39,8 +32,8 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Term:</strong>
-                                <input class="form-control" value="{{$plan->term}}" type="text" name="term" placeholder="Term"/>
+                                <strong>Time of License(in Minutes):</strong>
+                                <input class="form-control" value="{{explode(" ", $plan->term)[0]}}" type="number" name="term" placeholder="Time of License(in Minutes)"/>
                             </div>
                         </div>
 

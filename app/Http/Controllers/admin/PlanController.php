@@ -43,16 +43,14 @@ class PlanController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'description' => 'required',
             'price' => 'required',
             'term' => 'required',
         ]);
 
         Plans::create([
             'name' => $request->name,
-            'description' => $request->description,
             'price' => $request->price,
-            'term' => $request->term
+            'term' => $request->term. " minutes"
         ]);
 
         return redirect()->route('plans.index')->with('success', 'Admin created successfully.');
@@ -98,7 +96,6 @@ class PlanController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'description' => 'required',
             'price' => 'required',
             'term' => 'required'
         ]);
@@ -106,9 +103,8 @@ class PlanController extends Controller
 
         $plan->update([
             'name' => $request->name,
-            'description' => $request->description,
             'price' => $request->price,
-            'term' => $request->term
+            'term' => $request->term. " minutes"
         ]);
 
         return redirect()->route('plans.index')->with('success', 'Plan updated successfully');

@@ -22,13 +22,6 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Description:</strong>
-                            <p>{{$plan->description}}</p>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
                             <strong>Price:</strong>
                             <p>$ {{$plan->price}}</p>
                         </div>

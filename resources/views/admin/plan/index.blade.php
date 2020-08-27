@@ -22,7 +22,6 @@
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Description</th>
                             <th>Price</th>
                             <th>Term</th>
                             <th>Actions</th>
@@ -32,7 +31,6 @@
                         @foreach ($plans as $plan)
                             <tr>
                                 <td>{{ $plan->name }}</td>
-                                <td>{{ $plan->description }}</td>
                                 <td>{{ $plan->price }}</td>
                                 <td>{{ $plan->term }}</td>
                                 <td>
