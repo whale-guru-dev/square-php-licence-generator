@@ -40,6 +40,7 @@
           https://developer.squareup.com/docs/payments-api/overview
         -->
         <form id="nonce-form" novalidate action="{{route('subscribe')}}" method="post">
+            @csrf
             <div class="sq-field">
                 <label class="sq-label">Card Number</label>
                 <div id="sq-card-number"></div>
