@@ -58,10 +58,13 @@ class HomeController extends Controller
 
             $nonce = $_POST['nonce'];
 
+            $pid = $_POST['pid'];
+            $plan = Plans::find($pid);
+
             $payments_api = $client->getPaymentsApi();
 
             $money = new Money();
-            $money->setAmount(100);
+            $money->setAmount($plan->price * 100);
             $money->setCurrency('USD');
             $create_payment_request = new CreatePaymentRequest($nonce, uniqid(), $money);
 

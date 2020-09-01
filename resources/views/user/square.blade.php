@@ -63,7 +63,7 @@
             </div>
             <div class="sq-field">
                 <button id="sq-creditcard" class="sq-button" onclick="onGetCardNonce(event)">
-                    Pay $1.00 Now
+                    Pay ${{$plan->price}} Now
                 </button>
             </div>
             <!--
