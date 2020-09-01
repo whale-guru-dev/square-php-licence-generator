@@ -77,23 +77,24 @@ class HomeController extends Controller
                     echo '</ul>';
                     exit();
                 } else {
-                    $pid = $_POST['pid'];
-
-                    $plan = Plans::find($pid);
-                    $purchased = date('Y-m-d H:i:s');
-                    $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
-
-                    Licences::create([
-                        'user_id' => Auth::user()->id,
-                        'plan_id' => $pid,
-                        'expired' => $expired
-                    ]);
-
-                    return redirect(route('user.home'));
+                    echo '<pre>';
+                    print_r($response);
+                    echo '</pre>';
+//                    $pid = $_POST['pid'];
+//
+//                    $plan = Plans::find($pid);
+//                    $purchased = date('Y-m-d H:i:s');
+//                    $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
+//
+//                    Licences::create([
+//                        'user_id' => Auth::user()->id,
+//                        'plan_id' => $pid,
+//                        'expired' => $expired
+//                    ]);
+//
+//                    return redirect(route('user.home'));
                 }
-                echo '<pre>';
-                print_r($response);
-                echo '</pre>';
+
             } catch (ApiException $e) {
                 echo 'Caught exception!<br/>';
                 echo('<strong>Response body:</strong><br/>');
