@@ -41,6 +41,7 @@
         -->
         <form id="nonce-form" novalidate action="{{route('subscribe')}}" method="post">
             @csrf
+            <input type="hidden" value="purchase" name="type">
             <div class="sq-field">
                 <label class="sq-label">Card Number</label>
                 <div id="sq-card-number"></div>
