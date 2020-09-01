@@ -46,7 +46,7 @@ class HomeController extends Controller
 
     public function subscribe(Request $request)
     {
-//        dd($request);
+        dd($request);
         if ($request->type == 'purchase') {
             $pid = $_POST['pid'];
 
