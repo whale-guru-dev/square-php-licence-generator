@@ -26,6 +26,7 @@ Route::post('signup', 'Auth\RegisterController@register')->name('register');
 Route::post('/subscribe', 'user\HomeController@subscribe')->name('subscribe');
 
 Route::get('/home', 'user\HomeController@index')->name('user.home');
+Route::get('/subscribe-plan/{plan}', 'user\HomeController@subscribeView')->name('subscribe-plan');
 
 
 Route::group(['prefix' => 'admin'], function () {

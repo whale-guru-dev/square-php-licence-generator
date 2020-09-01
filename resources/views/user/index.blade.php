@@ -27,6 +27,7 @@
                                 </div>
 
                                 <div class="col-12 card-footer">
+                                    <a class="btn btn-warning btn-block" href="{{route('subscribe-plan', $eachPlan->id)}}">Purchase</a>
                                     <button class="btn btn-warning btn-block" id="purchaseBtn"
                                             data-ptype="{{$eachPlan->id}}">Purchase
                                     </button>

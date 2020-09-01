@@ -46,6 +46,7 @@ class HomeController extends Controller
 
     public function subscribe(Request $request)
     {
+//        dd($request);
         if ($request->type == 'purchase') {
             $pid = $_POST['pid'];
 
@@ -64,5 +65,12 @@ class HomeController extends Controller
             Auth::user()->licence->delete();
             return redirect(route('user.home'));
         }
+    }
+
+    public function subscribeView($plan)
+    {
+        $plan = Plans::find($plan);
+
+        return view('user.square', compact('plan'));
     }
 }
