@@ -16,7 +16,7 @@ class TransactionController extends Controller
 
     public function index()
     {
-        $trans = Transactions::all()->orderBy('id', 'desc')->paginate(10);
+        $trans = Transactions::all()->paginate(10);
         return view('admin.transaction.transactions', compact('trans'));
     }
 
