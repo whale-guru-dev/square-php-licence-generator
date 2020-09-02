@@ -27,10 +27,8 @@
                                 </div>
 
                                 <div class="col-12 card-footer">
-                                    <a class="btn btn-warning btn-block" href="{{route('subscribe-plan', $eachPlan->id)}}">Purchase</a>
-                                    <button class="btn btn-warning btn-block" id="purchaseBtn"
-                                            data-ptype="{{$eachPlan->id}}">Purchase
-                                    </button>
+                                    <a class="btn btn-warning btn-block"
+                                       href="{{route('subscribe-plan', $eachPlan->id)}}">Purchase</a>
                                 </div>
                             </div>
                             <!-- </div> -->
@@ -39,12 +37,6 @@
                 </div>
 
             </div><!-- /.container -->
-
-            <form style="display: none;" id="purchaseForm" action="{{route('subscribe')}}" method="POST">
-                @csrf
-                <input type="hidden" name="pid" value="" id="pid">
-                <input type="hidden" name="type" value="purchase">
-            </form>
         @else
             <div class="row">
                 <div class="col-md-4"></div>
@@ -83,15 +75,7 @@
         @endsection
 
         @section('js')
-            @if(!$licence)
-                <script>
-                    $(document).on("click", "#purchaseBtn", function () {
-                        var ptype = $(this).data('ptype');
-                        $("#pid").val(ptype);
-                        $("#purchaseForm").submit();
-                    });
-                </script>
-            @else
+            @if($licence)
                 <script>
                     $(document).on("click", "#repurchaseBtn", function () {
                         $("#repurchaseForm").submit();
