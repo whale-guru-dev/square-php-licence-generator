@@ -20,15 +20,12 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
+    <![endif]-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-
-    <![endif]-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/user/css/style.css')}}">
 </head>
 <body>
-
-@yield('content')
 
 @if(Auth::user())
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -47,7 +44,8 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="@if(request()->path() == 'home') active @endif"><a href="{{route('user.home')}}">Home</a></li>
+                    <li class="@if(request()->path() == 'profile') active @endif"><a href="{{route('user.profile')}}">Profile</a></li>
                     <li><a href="{{route('logout')}}">Logout</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
@@ -55,6 +53,16 @@
     </nav>
 @endif
 
+@yield('content')
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+@yield('js')
 @if (session('success'))
     <script type="text/javascript">
         $(document).ready(function(){
@@ -70,14 +78,6 @@
         });
     </script>
 @endif
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-
-@yield('js')
 </body>
 </html>
 

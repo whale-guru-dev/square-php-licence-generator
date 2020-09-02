@@ -10,23 +10,23 @@
 
         @if(!$licence)
             <div class="row">
-                <div class="row row-for-cards">
+                <div class="row">
                     @foreach($plans as $eachPlan)
                         <div class="col-md-4 col-sm-12">
                             <div class="card">
                                 <!-- <div class="row"> -->
-                                <div class="col-12 text-center card-header">
+                                <div class="text-center card-header">
                                     <span>{{$eachPlan->name}}</span>
                                 </div>
                                 <hr>
-                                <div class="col-12">
+                                <div class="">
                                     <ul>
                                         <li>Price: ${{$eachPlan->price}}</li>
                                     </ul>
 
                                 </div>
 
-                                <div class="col-12 card-footer">
+                                <div class="card-footer">
                                     <a class="btn btn-warning btn-block"
                                        href="{{route('subscribe-plan', $eachPlan->id)}}">Purchase</a>
                                 </div>
@@ -43,11 +43,11 @@
                 <div class="col-md-4">
                     <div class="card">
                         <!-- <div class="row"> -->
-                        <div class="col-12 text-center card-header">
+                        <div class="text-center card-header">
                             <span>Your Subscription Details</span>
                         </div>
                         <hr>
-                        <div class="col-12">
+                        <div class="">
                             <ul>
                                 <li>Name: {{$licence->plan->name}}</li>
                                 <li>Price: $ {{$licence->plan->price}}</li>
@@ -57,7 +57,7 @@
                             </ul>
                         </div>
 
-                        <div class="col-12 card-footer">
+                        <div class="col-sm-12  card-footer">
                             <button class="btn btn-primary btn-block" id="repurchaseBtn">Re-purchase</button>
                         </div>
                     </div>

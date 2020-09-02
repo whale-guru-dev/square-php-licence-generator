@@ -10,10 +10,13 @@ use App\Model\Plans;
 use App\Model\Transactions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input as input;
 use Square\SquareClient;
 use Square\Models\Money;
 use Square\Models\CreatePaymentRequest;
 use Square\Exceptions\ApiException;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class HomeController extends Controller
 {
@@ -118,5 +121,53 @@ class HomeController extends Controller
         $plan = Plans::find($plan);
 
         return view('user.square', compact('plan'));
+    }
+
+    public function profile()
+    {
+        $user = Auth::user();
+
+        return view('user.profile', compact('user'));
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::user()->id,'id')],
+            'mac' => ['required', 'string', 'max:255', Rule::unique('users')->ignore(Auth::user()->id,'id')],
+        ]);
+
+
+        $user = Auth::user();
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'mac' => $request->mac
+        ]);
+
+        return redirect()->route('user.profile')->with('success', 'Profile updated successfully');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'old_password' => 'required',
+            'password' => 'required|min:5|confirmed'
+        ]);
+
+        $user = Auth::user();
+
+        if(Hash::check(Input::get('old_password'), $user['password']))
+        {
+            $user->password = bcrypt(Input::get('password'));
+            $user->save();
+            return back()->with('success', 'Password Changed');
+        }
+        else {
+            {
+                return back()->with('alert', 'Password Not Changed');
+            }
+        }
     }
 }

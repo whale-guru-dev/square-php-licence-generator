@@ -22,7 +22,6 @@
             <li class="nav-item
             @if(request()->path() == 'admin/users') active open
                 @elseif(request()->path() == 'admin/user/search') active open
-                @elseif(request()->path() == 'admin/user-translog') active open
             @endif">
                 <a href="#" class="nav-link nav-toggle">
                     <i class="fa fa-users"></i>
