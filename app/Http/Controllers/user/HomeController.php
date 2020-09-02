@@ -65,50 +65,63 @@ class HomeController extends Controller
             $pid = $_POST['pid'];
             $plan = Plans::find($pid);
 
-            $payments_api = $client->getPaymentsApi();
+            if($plan->price == 0) {
+                $purchased = date('Y-m-d H:i:s');
+                $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
 
-            $money = new Money();
-            $money->setAmount($plan->price * 100);
-            $money->setCurrency('USD');
-            $create_payment_request = new CreatePaymentRequest($nonce, uniqid(), $money);
+                Licences::create([
+                    'user_id' => Auth::user()->id,
+                    'plan_id' => $pid,
+                    'expired' => $expired
+                ]);
 
-            try {
-                $response = $payments_api->createPayment($create_payment_request);
-                if ($response->isError()) {
-                    $errors = $response->getErrors();
+                return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
+            } else {
+                $payments_api = $client->getPaymentsApi();
 
-                    $error_resp = '<ul>';
-                    foreach ($errors as $error) {
-                        $error_resp .= '<li>❌ ' . $error->getDetail() . '</li>';
+                $money = new Money();
+                $money->setAmount($plan->price * 100);
+                $money->setCurrency('USD');
+                $create_payment_request = new CreatePaymentRequest($nonce, uniqid(), $money);
+
+                try {
+                    $response = $payments_api->createPayment($create_payment_request);
+                    if ($response->isError()) {
+                        $errors = $response->getErrors();
+
+                        $error_resp = '<ul>';
+                        foreach ($errors as $error) {
+                            $error_resp .= '<li>❌ ' . $error->getDetail() . '</li>';
+                        }
+                        $error_resp .= '</ul>';
+
+                        return redirect()->route('user.home')->with('alert', $error_resp);
+                    } else {
+                        $receipt = json_decode($response->getBody());
+
+                        $transaction = Transactions::create([
+                            'user_id' => Auth::user()->id,
+                            'payment_id' => $receipt->payment->id,
+                            'status' => $receipt->payment->status,
+                            'amount' => $receipt->payment->amount_money->amount / 100,
+                            'currency' => $receipt->payment->amount_money->currency
+                        ]);
+
+                        $purchased = date('Y-m-d H:i:s');
+                        $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
+
+                        Licences::create([
+                            'user_id' => Auth::user()->id,
+                            'plan_id' => $pid,
+                            'expired' => $expired
+                        ]);
+
+                        return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
                     }
-                    $error_resp .= '</ul>';
 
-                    return redirect()->route('user.home')->with('alert', $error_resp);
-                } else {
-                    $receipt = json_decode($response->getBody());
-
-                    $transaction = Transactions::create([
-                        'user_id' => Auth::user()->id,
-                        'payment_id' => $receipt->payment->id,
-                        'status' => $receipt->payment->status,
-                        'amount' => $receipt->payment->amount_money->amount / 100,
-                        'currency' => $receipt->payment->amount_money->currency
-                    ]);
-
-                    $purchased = date('Y-m-d H:i:s');
-                    $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
-
-                    Licences::create([
-                        'user_id' => Auth::user()->id,
-                        'plan_id' => $pid,
-                        'expired' => $expired
-                    ]);
-
-                    return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
+                } catch (ApiException $e) {
+                    return redirect()->route('user.home')->with('alert', 'There was an error while proceeding your subscription.');
                 }
-
-            } catch (ApiException $e) {
-                return redirect()->route('user.home')->with('alert', 'There was an error while proceeding your subscription.');
             }
         } else if ($request->type == 'repurchase') {
             Auth::user()->licence->delete();
