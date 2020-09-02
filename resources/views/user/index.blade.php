@@ -10,32 +10,33 @@
 
         @if(!$licence)
             <div class="row">
-                <div class="row">
-                    @foreach($plans as $eachPlan)
-                        <div class="col-md-4 col-sm-12">
-                            <div class="card">
-                                <!-- <div class="row"> -->
-                                <div class="text-center card-header">
-                                    <span>{{$eachPlan->name}}</span>
-                                </div>
-                                <hr>
-                                <div class="">
-                                    <ul>
-                                        <li>Price: ${{$eachPlan->price}}</li>
-                                    </ul>
+                <div class="col-md-12">
+                    <div class="row">
+                        @foreach($plans as $eachPlan)
+                            <div class="col-md-4 col-sm-12">
+                                <div class="card">
+                                    <!-- <div class="row"> -->
+                                    <div class="text-center card-header">
+                                        <span>{{$eachPlan->name}}</span>
+                                    </div>
+                                    <hr>
+                                    <div class="">
+                                        <ul>
+                                            <li>Price: ${{$eachPlan->price}}</li>
+                                        </ul>
 
-                                </div>
+                                    </div>
 
-                                <div class="card-footer">
-                                    <a class="btn btn-warning btn-block"
-                                       href="{{route('subscribe-plan', $eachPlan->id)}}">Purchase</a>
+                                    <div class="card-footer">
+                                        <a class="btn btn-warning btn-block"
+                                           href="{{route('subscribe-plan', $eachPlan->id)}}">Purchase</a>
+                                    </div>
                                 </div>
+                                <!-- </div> -->
                             </div>
-                            <!-- </div> -->
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
-
             </div><!-- /.container -->
         @else
             <div class="row">
