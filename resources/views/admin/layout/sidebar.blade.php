@@ -64,39 +64,17 @@
             </li>
 
 
-            <li class="nav-item @if(request()->path() == 'admin/transaction-deposit') active open
-                         @elseif(request()->path() == 'admin/transaction-withdrawal') active open
-                             @elseif(request()->path() == 'admin/withdrawal-confirm') active open
-                           @elseif(request()->path() == 'admin/transaction-settings') active open
-            @endif">
+            <li class="nav-item @if(request()->path() == 'admin/transaction') active open @endif">
                 <a href="#" class="nav-link nav-toggle">
                     <i class="fa fa-users"></i>
                     <span class="title">Transaction</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item @if(request()->path() == 'admin/transaction-deposit') active open @endif">
-                        <a href="{{route('transaction.deposit')}}" class="nav-link ">
+                    <li class="nav-item @if(request()->path() == 'admin/transaction') active open @endif">
+                        <a href="{{route('transaction.index')}}" class="nav-link ">
                             <i class="icon-user"></i>
-                            <span class="title">Deposit Logs</span>
-                        </a>
-                    </li>
-                    <li class="nav-item @if(request()->path() == 'admin/transaction-withdrawal') active open @endif">
-                        <a href="{{route('transaction.withdrawal')}}" class="nav-link ">
-                            <i class="icon-user"></i>
-                            <span class="title">Withdrawal Logs</span>
-                        </a>
-                    </li>
-                    <li class="nav-item @if(request()->path() == 'admin/withdrawal-confirm') active open @endif">
-                        <a href="{{route('transaction.withdrawal.confirm')}}" class="nav-link ">
-                            <i class="icon-user"></i>
-                            <span class="title">Withdrawal Approve Requests</span>
-                        </a>
-                    </li>
-                    <li class="nav-item @if(request()->path() == 'admin/transaction-settings') active open @endif">
-                        <a href="{{route('transaction.setting')}}" class="nav-link ">
-                            <i class="icon-user"></i>
-                            <span class="title">Settings</span>
+                            <span class="title">Transactions</span>
                         </a>
                     </li>
                 </ul>

@@ -14,26 +14,21 @@
                 <div class="portlet-body">
                     <table class="table table-striped">
                         <tr>
-                            <th>Type</th>
                             <th>User</th>
                             <th>Amount</th>
-                            <th>TRX ID</th>
+                            <th>PAYMENT ID</th>
                             <th>Status</th>
                             <th>Details</th>
                             <th>Date</th>
                         </tr>
                         @foreach($trans as $log)
                             <tr>
-                                <td style="text-transform: capitalize;">
-                                    {{$log->ipn_type}}
-                                </td>
                                 <td>
-                                    <a href="{{route('user.single', $log->uid)}}">{{\App\User::find($log->uid)->username}}</a>
+                                    <a href="{{route('user.single', $log->user->id)}}">{{$log->user->name}}</a>
                                 </td>
                                 <td>{{$log->amount}} {{$log->currency}}</td>
-                                <td>{{$log->txn_id}}</td>
-                                <td style="text-transform: capitalize;">{{$log->final_status}}</td>
-                                <td style="text-transform: capitalize;">{{$log->status_text}}</td>
+                                <td>{{$log->payment_id}}</td>
+                                <td style="text-transform: capitalize;">{{$log->status}}</td>
                                 <td>{{$log->created_at}}</td>
                             </tr>
                         @endforeach

@@ -80,7 +80,7 @@ class HomeController extends Controller
                     }
                     $error_resp .= '</ul>';
 
-                    return redirect()->route('user.home')->with('error', $error_resp);
+                    return redirect()->route('user.home')->with('alert', $error_resp);
                 } else {
                     $receipt = json_decode($response->getBody());
 
@@ -105,11 +105,11 @@ class HomeController extends Controller
                 }
 
             } catch (ApiException $e) {
-                return redirect()->route('user.home')->with('error', 'There was an error while proceeding your subscription.');
+                return redirect()->route('user.home')->with('alert', 'There was an error while proceeding your subscription.');
             }
         } else if ($request->type == 'repurchase') {
             Auth::user()->licence->delete();
-            return redirect(route('user.home'));
+            return redirect()->route('user.home')->with('success', 'Plan initialized successfully');
         }
     }
 

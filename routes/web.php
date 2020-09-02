@@ -50,14 +50,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/users/create', 'admin\UserController@createUser')->name('users.create');
 
     //Transaction Management
-    Route::get('/transaction-deposit', 'AdminTransactionController@deposit')->name('transaction.deposit');
-    Route::get('/transaction-withdrawal', 'AdminTransactionController@withdrawal')->name('transaction.withdrawal');
-    Route::get('/withdrawal-confirm', 'AdminTransactionController@withdrawConfirm')->name('transaction.withdrawal.confirm');
-    Route::post('/confirmWithdrawal', 'AdminTransactionController@confirmWithdrawal')->name('transaction.withdrawal.confirmWithdrawal');
-    Route::get('/transaction-settings', 'AdminTransactionController@transactionSetting')->name('transaction.setting');
-    Route::post('/coin-activate', 'AdminTransactionController@coinActivate')->name('transaction.coin.activate');
-    Route::post('/withdrawalLimit', 'AdminTransactionController@withdrawalLimit')->name('transaction.coin.withdrawalLimit');
-    Route::post('/confirmMethod', 'AdminTransactionController@confirmMethod')->name('transaction.coin.confirmMethod');
+    Route::get('/transaction', 'admin\TransactionController@index')->name('transaction.index');
 
     //Admin Auth
     Route::get('/', 'AdminAuth\LoginController@showLoginForm')->name('admin.login');
