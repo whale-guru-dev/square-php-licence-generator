@@ -147,6 +147,10 @@ hr {
     text-decoration: none;
 }
 
+.download-btn:active {
+    border: none;
+}
+
 #footer {
     border-radius: 0px;
     background: rgba(6, 6, 6, 0.996);

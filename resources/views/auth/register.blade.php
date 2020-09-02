@@ -7,9 +7,9 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12  step-row">
-                <h2 class="h2">Step 1.</h2>
-                <h6 class="h6 step-content">Download Zillow AR and Obtain Mac Address</h6>
+            <div class="col-md-12  text-center">
+                <h2 class="h2">Step 1. Download Zillow AR and Obtain Mac Address</h2>
+{{--                <h6 class="h6 step-content">Download Zillow AR and Obtain Mac Address</h6>--}}
             </div>
         </div>
 
@@ -47,9 +47,9 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12  step-row">
-                <h2 class="h2">Step 2.</h2>
-                <h6 class="h6 step-content">Return To This Page, Fill Out Form & Complete Registration</h6>
+            <div class="col-md-12  text-center">
+                <h2 class="h2">Step 2. Return To This Page, Fill Out Form & Complete Registration</h2>
+{{--                <h6 class="h6 step-content">Return To This Page, Fill Out Form & Complete Registration</h6>--}}
             </div>
         </div>
 
@@ -125,7 +125,7 @@
 
                     <div class="row text-center">
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="bt-text-area download-btn">
                                 {{ __('Register') }}
                             </button>
                         </div>

@@ -59,7 +59,7 @@
 
                     <div class="row text-center">
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="bt-text-area download-btn">
                                 {{ __('Login') }}
                             </button>
                         </div>
