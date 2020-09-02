@@ -18,7 +18,6 @@
                             <th>Amount</th>
                             <th>PAYMENT ID</th>
                             <th>Status</th>
-                            <th>Details</th>
                             <th>Date</th>
                         </tr>
                         @foreach($trans as $log)
