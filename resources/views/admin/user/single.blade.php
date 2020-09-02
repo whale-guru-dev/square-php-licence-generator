@@ -13,7 +13,10 @@
                             <p>Email: <b>{{$user->email}}</b></p>
                             <p>Plan: <b>{{$user->licence->plan->name}}</b></p>
                             <p>Expired: <b>{{$user->licence->expired}}</b></p>
-                            <p>Paid: <b>100$</b></p>
+                            @php
+                            $paid = \App\Model\Transactions::where('user_id', $user->id)->sum('amount');
+                            @endphp
+                            <p>Paid: <b>{{$paid}} $</b></p>
                         </div>
                     </div>
                 </div>
