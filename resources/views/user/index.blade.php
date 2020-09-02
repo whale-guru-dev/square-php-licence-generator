@@ -4,7 +4,7 @@
     <div class="container">
 
         <div class="starter-template">
-            <h1>Licence Genertor</h1>
+            <h1>Licence Generator</h1>
             <p class="lead">Please Check/Choose your plans.</p>
         </div>
 
