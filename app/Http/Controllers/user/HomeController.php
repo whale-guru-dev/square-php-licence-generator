@@ -7,6 +7,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use App\Model\Licences;
 use App\Model\Plans;
+use App\Model\Transactions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Square\SquareClient;
@@ -71,40 +72,40 @@ class HomeController extends Controller
             try {
                 $response = $payments_api->createPayment($create_payment_request);
                 if ($response->isError()) {
-                    echo 'Api response has Errors';
                     $errors = $response->getErrors();
-                    echo '<ul>';
+
+                    $error_resp = '<ul>';
                     foreach ($errors as $error) {
-                        echo '<li>❌ ' . $error->getDetail() . '</li>';
+                        $error_resp .= '<li>❌ ' . $error->getDetail() . '</li>';
                     }
-                    echo '</ul>';
-                    exit();
+                    $error_resp .= '</ul>';
+
+                    return redirect()->route('user.home')->with('error', $error_resp);
                 } else {
-                    echo '<pre>';
-                    print_r($response->getBody());
-                    echo '</pre>';
-//                    $pid = $_POST['pid'];
-//
-//                    $plan = Plans::find($pid);
-//                    $purchased = date('Y-m-d H:i:s');
-//                    $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
-//
-//                    Licences::create([
-//                        'user_id' => Auth::user()->id,
-//                        'plan_id' => $pid,
-//                        'expired' => $expired
-//                    ]);
-//
-//                    return redirect(route('user.home'));
+                    $receipt = $response->getBody();
+
+                    $transaction = Transactions::create([
+                        'user_id' => Auth::user()->id,
+                        'payment_id' => $receipt->payment->id,
+                        'status' => $receipt->payment->status,
+                        'amount' => $receipt->payment->amount_money->amount / 100,
+                        'currency' => $receipt->payment->amount_money->currency
+                    ]);
+
+                    $purchased = date('Y-m-d H:i:s');
+                    $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
+
+                    Licences::create([
+                        'user_id' => Auth::user()->id,
+                        'plan_id' => $pid,
+                        'expired' => $expired
+                    ]);
+
+                    return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
                 }
 
             } catch (ApiException $e) {
-                echo 'Caught exception!<br/>';
-                echo('<strong>Response body:</strong><br/>');
-                echo '<pre>'; var_dump($e->getResponseBody()); echo '</pre>';
-                echo '<br/><strong>Context:</strong><br/>';
-                echo '<pre>'; var_dump($e->getContext()); echo '</pre>';
-                exit();
+                return redirect()->route('user.home')->with('error', 'There was an error while proceeding your subscription.');
             }
         } else if ($request->type == 'repurchase') {
             Auth::user()->licence->delete();
