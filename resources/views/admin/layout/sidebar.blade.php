@@ -38,12 +38,6 @@
                             <span class="title">Users</span>
                         </a>
                     </li>
-                    <li class="nav-item @if(request()->path() == 'admin/user-translog') active open    @endif">
-                        <a href="{{route('users.transactions')}}" class="nav-link ">
-                            <i class="fa fa-users"></i>
-                            <span class="title">Users Transactions</span>
-                        </a>
-                    </li>
                 </ul>
             </li>
 
