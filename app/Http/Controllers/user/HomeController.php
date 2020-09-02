@@ -82,7 +82,7 @@ class HomeController extends Controller
 
                     return redirect()->route('user.home')->with('error', $error_resp);
                 } else {
-                    $receipt = $response->getBody();
+                    $receipt = json_decode($response->getBody());
 
                     $transaction = Transactions::create([
                         'user_id' => Auth::user()->id,
