@@ -58,7 +58,7 @@
                             </ul>
                         </div>
 
-                        <div class="col-sm-12  card-footer">
+                        <div class="card-footer">
                             <button class="btn btn-primary btn-block" id="repurchaseBtn">Re-purchase</button>
                         </div>
                     </div>
