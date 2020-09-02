@@ -81,7 +81,7 @@ class HomeController extends Controller
                     exit();
                 } else {
                     echo '<pre>';
-                    print_r($response);
+                    print_r($response->getBody());
                     echo '</pre>';
 //                    $pid = $_POST['pid'];
 //
