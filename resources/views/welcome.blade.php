@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
           integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -89,6 +91,9 @@
         }
 
         #third {
+            height: 835px;
+            display: flex;
+            align-items: center;
             border-radius: 0px;
             background: rgba(6, 81, 173, 0.996);
             min-height: 50px;
@@ -237,6 +242,65 @@
         #footer .footer-contact-info_content {
             font-size: 13px;
         }
+
+        .carousel {
+            margin: 30px auto 50px;
+            padding: 0 68px;
+        }
+        .carousel .item {
+            text-align: center;
+            overflow: hidden;
+            /*height: 160px;*/
+        }
+        .carousel .item .img-box {
+            background: #fff;
+            padding: 9px;
+            box-shadow: 0 6px 20px -6px rgba(0,0,0,0.4);
+        }
+        .carousel .item img {
+            margin: 0 auto;
+        }
+        .carousel .carousel-control {
+            width: 68px;
+            background: none;
+        }
+        .carousel .carousel-control i {
+            font-size: 28px;
+            position: absolute;
+            top: 50%;
+            display: inline-block;
+            margin-top: -15px;
+            z-index: 5;
+            left: 0;
+            right: 0;
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+        }
+        .carousel .carousel-indicators {
+            bottom: -40px;
+        }
+        .carousel-indicators li, .carousel-indicators li.active {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 1px 4px;
+            box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+        }
+        .carousel-indicators li {
+            background: #999;
+            border-color: transparent;
+        }
+        .carousel-indicators li.active {
+            background: #555;
+        }
+
+        .cust-name {
+            font-style: italic;
+        }
+
+        .template-demo {
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
@@ -245,8 +309,12 @@
 <section id="first">
     <div class="container">
         <div class="row text-center">
-            <h1 class="text-uppercase">never miss another client again</h1>
-
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h1 class="text-uppercase">never miss another client again</h1>
+            </div>
+        </div>
+        <div class="row text-center">
             <span><img src="{{ asset('assets/logo.png') }}" class="img-responsive"/></span>
 
             <h3><strong>Try FREE - No Credit Card Required</strong></h3>
@@ -339,6 +407,76 @@
                         with pets, you might choose key words, Cats, Dogs, Pets. In this case if anyone messages you and
                         states the word cat, or dog, then you they will not be sent a message,</p>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-23 text-center">
+                <h2><strong>Testimonials</strong></h2>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <h4 class="card-title"><span style="color: red;"><i class="fa fa-quote-left"></i></span></h4>
+                                    <div class="template-demo">
+                                        <p>I had no idea how many leads I was waisting by not checking my zillow inbox more often. What I love about the Zillow AR is how it checks my inbox for new messages every 30 minutes. I have been using this amazing software for almost 1 month and I have not lost one single lead.</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="profile">
+                                                <h4 class="cust-name">- Clair S -</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h4 class="card-title"><span style="color: red;"><i class="fa fa-quote-left"></i></span></h4>
+                                    <div class="template-demo">
+                                        <p>I started using the zillar ar, and literally within 3 minutes i could see it working. I started recieving texts coming in, and not just text messages, but fully qualified prescreen leads that were a prfect fit for my apartments. I went from someone who takes 100 calls every day, to instantly not needing to answr my phone any more. It quickly dawned on me that this was a complete game changer. I went from now, to woooooooow!</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="profile">
+                                                <h4 class="cust-name">- Benjamin -</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h4 class="card-title"><span style="color: red;"><i class="fa fa-quote-left"></i></span></h4>
+                                    <div class="template-demo">
+                                        <p><strong>HOW DID I EVER LIVE WITH OUT IT!</strong></p>
+                                        <p>No I am dead serious. I remember spending hours every day answering the phone trying to find the needle in the hey stack/perfect client. Now all i do is read my text and pick the ones that best fit what i am looking for. I am making double if not triple the money and here's the best part. I am working half as much I Highly Recommend.</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="profile">
+                                                <h4 class="cust-name">- Steven B -</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="forth">
+    <div class="container">
+        <div class="row text-center">
+            <div class="">
+                <h1 class="text-uppercase"><span class="purple-text">try free</span> - no credit card required</h1>
+                <a href="{{route('register')}}" class="btn signup-btn text-uppercase">try free download</a>
             </div>
         </div>
     </div>
