@@ -73,7 +73,9 @@ class HomeController extends Controller
             $plan = Plans::find($pid);
 
             if($plan->price == 0) {
-                Auth::user()->licence->delete();
+                if(Auth::user()->licence) {
+                    Auth::user()->licence->delete();
+                }
 
                 $purchased = date('Y-m-d H:i:s');
                 $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
@@ -115,6 +117,10 @@ class HomeController extends Controller
                             'amount' => $receipt->payment->amount_money->amount / 100,
                             'currency' => $receipt->payment->amount_money->currency
                         ]);
+
+                        if(Auth::user()->licence) {
+                            Auth::user()->licence->delete();
+                        }
 
                         $purchased = date('Y-m-d H:i:s');
                         $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
