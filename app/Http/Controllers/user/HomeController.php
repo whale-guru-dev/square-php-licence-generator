@@ -38,7 +38,7 @@ class HomeController extends Controller
     public function index()
     {
         $licence = Auth::user()->licence;
-        $plans = Plans::all();
+        $plans = Plans::orderBy('price', 'asc')->where('id', '>', '0')->get();
         if ($licence) {
             if ((strtotime($licence->expired) - time()) < 0) {
                 $expired = true;
@@ -50,6 +50,13 @@ class HomeController extends Controller
             $expired = false;
         }
         return view('user.index', compact('licence', 'expired', 'plans'));
+    }
+
+    public function planView()
+    {
+        $plans = Plans::orderBy('price', 'asc')->where('id', '>', '0')->get();
+
+        return view('user.plan', compact('plans'));
     }
 
     public function subscribe(Request $request)

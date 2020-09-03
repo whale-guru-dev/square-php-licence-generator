@@ -46,6 +46,7 @@
                 <ul class="nav navbar-nav">
                     <li class="@if(request()->path() == 'home') active @endif"><a href="{{route('user.home')}}">Home</a></li>
                     <li class="@if(request()->path() == 'profile') active @endif"><a href="{{route('user.profile')}}">Profile</a></li>
+                    <li class="@if(request()->path() == 'plans') active @endif"><a href="{{route('user.plan')}}">Plans</a></li>
                     <li><a href="{{route('logout')}}">Logout</a></li>
                 </ul>
             </div><!--/.nav-collapse -->

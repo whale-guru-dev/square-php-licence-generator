@@ -1,6 +1,10 @@
 @extends('layouts.user')
 
 @section('content')
+    @php
+        $colors = ['warning', 'success', 'info'];
+    @endphp
+
     <div class="container">
 
         <div class="starter-template">
@@ -28,7 +32,7 @@
                                     </div>
 
                                     <div class="card-footer">
-                                        <a class="btn btn-warning btn-block"
+                                        <a class="btn btn-{{$colors[$loop->index]}} btn-block"
                                            href="{{route('subscribe-plan', $eachPlan->id)}}">Purchase</a>
                                     </div>
                                 </div>
@@ -59,7 +63,8 @@
                         </div>
 
                         <div class="card-footer">
-                            <button class="btn btn-primary btn-block" id="repurchaseBtn">Re-purchase</button>
+                            <a class="btn btn-primary btn-block" href="{{route('user.plan')}}">Re-purchase</a>
+{{--                            <button class="btn btn-primary btn-block" id="repurchaseBtn">Re-purchase</button>--}}
                         </div>
                     </div>
                 </div>

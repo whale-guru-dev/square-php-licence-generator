@@ -27,6 +27,7 @@ Route::post('/subscribe', 'user\HomeController@subscribe')->name('subscribe');
 
 Route::get('/home', 'user\HomeController@index')->name('user.home');
 Route::get('/profile', 'user\HomeController@profile')->name('user.profile');
+Route::get('/plans', 'user\HomeController@planView')->name('user.plan');
 Route::get('/subscribe-plan/{plan}', 'user\HomeController@subscribeView')->name('subscribe-plan');
 
 Route::post('/update-profile', 'user\HomeController@updateProfile')->name('user.update.profile');
