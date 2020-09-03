@@ -153,13 +153,13 @@ hr {
 
 #footer {
     border-radius: 0px;
-    background: rgba(6, 6, 6, 0.996);
+    background: rgba(51, 51, 51, 0.996);
     height: 200px;
     min-height: 50px;
     border: 0px none rgb(0, 0, 0);
     display: flex;
     align-items: center;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
 }
 
 #footer p {
@@ -178,4 +178,10 @@ hr {
 
 .invalid-feedback {
     color: red;
+}
+
+.step-two {
+    color: white;
+    background: black;
+    margin-top: 50px;
 }
