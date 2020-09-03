@@ -9,7 +9,7 @@
 
         <div class="starter-template">
             <h1>Licence Generator</h1>
-            <p class="lead">Please Check/Choose your plans.</p>
+            <p class="lead">Your Current Plan.</p>
         </div>
 
         @if(!$licence)

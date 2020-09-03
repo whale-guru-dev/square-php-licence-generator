@@ -42,7 +42,7 @@
                                 </div>
                                 @else
                                     <div class="card-footer">
-                                        <a class="btn btn-info btn-block"
+                                        <a class="btn btn-warning btn-block"
                                            href="javascript:void(0);">Current Plan</a>
                                     </div>
                                 @endif
