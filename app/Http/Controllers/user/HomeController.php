@@ -73,6 +73,8 @@ class HomeController extends Controller
             $plan = Plans::find($pid);
 
             if($plan->price == 0) {
+                Auth::user()->licence->delete();
+
                 $purchased = date('Y-m-d H:i:s');
                 $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
 
