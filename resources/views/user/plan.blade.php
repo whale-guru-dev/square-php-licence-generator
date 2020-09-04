@@ -2,7 +2,7 @@
 
 @section('content')
     @php
-    $colors = ['warning', 'success', 'info'];
+    $colors = ['warning', 'success', 'info', 'primary', 'danger'];
     @endphp
     <div class="container">
 
@@ -42,8 +42,13 @@
                                 </div>
                                 @else
                                     <div class="card-footer">
+                                        @if((strtotime(Auth::user()->licence->expired) - time()) < 0)
+                                            <a class="btn btn-{{$colors[$loop->index]}} btn-block"
+                                               href="{{route('subscribe-plan', $eachPlan->id)}}">Purchase</a>
+                                        @else
                                         <a class="btn btn-warning btn-block"
                                            href="javascript:void(0);">Current Plan</a>
+                                        @endif
                                     </div>
                                 @endif
                             </div>

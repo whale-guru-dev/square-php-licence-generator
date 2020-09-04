@@ -151,7 +151,7 @@ class HomeController extends Controller
         if($plan->price == 0)
         {
             if(Auth::user()->licence) {
-                if(Auth::user()->licence->plan_id == $plan) {
+                if(Auth::user()->licence->plan_id == $plan->id) {
                     return redirect()->route('user.home')->with('alert', 'You cannot use free plan again');
                 } else {
                     Auth::user()->licence->delete();
@@ -163,7 +163,7 @@ class HomeController extends Controller
 
             Licences::create([
                 'user_id' => Auth::user()->id,
-                'plan_id' => $plan,
+                'plan_id' => $plan->id,
                 'expired' => $expired
             ]);
 
