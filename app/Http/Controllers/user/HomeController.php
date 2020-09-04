@@ -148,7 +148,29 @@ class HomeController extends Controller
     {
         $plan = Plans::find($plan);
 
-        return view('user.square', compact('plan'));
+        if($plan->price == 0)
+        {
+            if(Auth::user()->licence) {
+                if(Auth::user()->licence->plan_id == $plan) {
+                    return redirect()->route('user.home')->with('alert', 'You cannot use free plan again');
+                } else {
+                    Auth::user()->licence->delete();
+                }
+            }
+
+            $purchased = date('Y-m-d H:i:s');
+            $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
+
+            Licences::create([
+                'user_id' => Auth::user()->id,
+                'plan_id' => $plan,
+                'expired' => $expired
+            ]);
+
+            return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
+        } else {
+            return view('user.square', compact('plan'));
+        }
     }
 
     public function profile()
