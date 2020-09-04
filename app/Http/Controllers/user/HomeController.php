@@ -64,7 +64,8 @@ class HomeController extends Controller
         if ($request->type == 'purchase') {
             $client = new SquareClient([
                 'accessToken' => env('SQUARE_TOKEN'),
-                'environment' => 'sandbox'
+//                'environment' => 'sandbox'
+                'environment' => 'production'
             ]);
 
             $nonce = $_POST['nonce'];
