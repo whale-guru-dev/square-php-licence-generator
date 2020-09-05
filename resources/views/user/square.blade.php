@@ -29,7 +29,7 @@
 
     <div class="row">
         <div class="col-md-12 text-center">
-            <h4><strong>You are going to subscribe {{$plan->name}}</strong></h4>
+            <h4><strong>{{$plan->name}} - You are about to make a one time payment</strong></h4>
         </div>
     </div>
 
