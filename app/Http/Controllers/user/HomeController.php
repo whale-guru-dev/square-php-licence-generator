@@ -185,16 +185,14 @@ class HomeController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::user()->id,'id')],
-            'mac' => ['required', 'string', 'max:255', Rule::unique('users')->ignore(Auth::user()->id,'id')],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::user()->id,'id')]
         ]);
 
 
         $user = Auth::user();
         $user->update([
             'name' => $request->name,
-            'email' => $request->email,
-            'mac' => $request->mac
+            'email' => $request->email
         ]);
 
         return redirect()->route('user.profile')->with('success', 'Profile updated successfully');
