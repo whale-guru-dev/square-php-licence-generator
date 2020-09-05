@@ -29,7 +29,7 @@
 
     <div class="row">
         <div class="col-md-12 text-center">
-            <h4>You are going to subscribe {{$plan->name}}</h4>
+            <h4><strong>You are going to subscribe {{$plan->name}}</strong></h4>
         </div>
     </div>
 
