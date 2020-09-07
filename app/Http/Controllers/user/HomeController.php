@@ -18,8 +18,12 @@ use Square\Exceptions\ApiException;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
+use App\Traits\SubscribeTrait;
+
 class HomeController extends Controller
 {
+
+    use SubscribeTrait;
     /**
      * Create a new controller instance.
      *
@@ -74,18 +78,8 @@ class HomeController extends Controller
             $plan = Plans::find($pid);
 
             if($plan->price == 0) {
-                if(Auth::user()->licence) {
-                    Auth::user()->licence->delete();
-                }
 
-                $purchased = date('Y-m-d H:i:s');
-                $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
-
-                Licences::create([
-                    'user_id' => Auth::user()->id,
-                    'plan_id' => $pid,
-                    'expired' => $expired
-                ]);
+                $this->subscribe_plan_for_user($plan);
 
                 return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
             } else {
@@ -119,18 +113,7 @@ class HomeController extends Controller
                             'currency' => $receipt->payment->amount_money->currency
                         ]);
 
-                        if(Auth::user()->licence) {
-                            Auth::user()->licence->delete();
-                        }
-
-                        $purchased = date('Y-m-d H:i:s');
-                        $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
-
-                        Licences::create([
-                            'user_id' => Auth::user()->id,
-                            'plan_id' => $pid,
-                            'expired' => $expired
-                        ]);
+                        $this->subscribe_plan_for_user($plan);
 
                         return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
                     }
@@ -154,21 +137,24 @@ class HomeController extends Controller
             if(Auth::user()->licence) {
                 if(Auth::user()->licence->plan_id == $plan->id) {
                     return redirect()->route('user.home')->with('alert', 'You cannot use free plan again');
-                } else {
-                    Auth::user()->licence->delete();
                 }
             }
 
-            $purchased = date('Y-m-d H:i:s');
-            $expired = date('Y-m-d H:i:s', strtotime('+' . $plan->term, strtotime($purchased)));
-
-            Licences::create([
-                'user_id' => Auth::user()->id,
-                'plan_id' => $plan->id,
-                'expired' => $expired
-            ]);
+            $this->subscribe_plan_for_user($plan);
 
             return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
+        } else if(Auth::user()->licence && Auth::user()->licence->plan->price > $plan->price) {
+            $licence = Auth::user()->licence;
+
+            if ((strtotime($licence->expired) - time()) > 0) {
+
+                $this->subscribe_plan_for_user($plan);
+
+                return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
+            } else {
+                return view('user.square', compact('plan'));
+            }
+
         } else {
             return view('user.square', compact('plan'));
         }
