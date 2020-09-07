@@ -135,14 +135,13 @@ class HomeController extends Controller
         if($plan->price == 0)
         {
             if(Auth::user()->licence) {
-                if(Auth::user()->licence->plan_id == $plan->id) {
+//                if(Auth::user()->licence->plan_id == $plan->id) {
                     return redirect()->route('user.home')->with('alert', 'You cannot use free plan again');
-                }
+//                }
+            } else {
+                $this->subscribe_plan_for_user($plan);
+                return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
             }
-
-            $this->subscribe_plan_for_user($plan);
-
-            return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
         } else if(Auth::user()->licence && Auth::user()->licence->plan->price > $plan->price) {
             $licence = Auth::user()->licence;
 
