@@ -32,7 +32,26 @@ Route::get('/subscribe-plan/{plan}', 'user\HomeController@subscribeView')->name(
 
 Route::post('/update-profile', 'user\HomeController@updateProfile')->name('user.update.profile');
 Route::post('/update-password', 'user\HomeController@updatePassword')->name('user.update.password');
-
+// Download Route
+Route::get('download/{filename}', function($filename)
+{
+    // Check if file exists in app/storage/file folder
+    $file_path = base_path().'/'.$filename;
+	// exit($file_path);
+    if (file_exists($file_path))
+    {
+        // Send Download
+        return Response::download($file_path, $filename, [
+            'Content-Length: '. filesize($file_path)
+        ]);
+    }
+    else
+    {
+        // Error
+        exit('Requested file does not exist on our server!');
+    }
+})
+->where('filename', '[A-Za-z0-9\-\_\.]+');
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/home','admin\HomeController@index')->name('home');
 

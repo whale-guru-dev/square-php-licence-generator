@@ -1,13 +1,26 @@
 <!DOCTYPE html>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5f5b0d3ef0e7167d000f547d/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Licence Generator</title>
+    <title>TheZWAR</title>
 
-    <link rel="shortcut icon" href="{{ asset('assets/favicon.jpg') }}"/>
+    <link rel="shortcut icon" href="{{ asset('assets/favicon.png') }}"/>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -26,10 +39,9 @@
 
     <![endif]-->
     <style>
-
-        @media (min-width: 782px) {
-
-        }
+		body {
+			background: linear-gradient(90deg, rgba(240, 240, 240, 0.94) 0%, rgb(255, 255, 255) 100%);
+		}
         section {
             padding: 50px;
         }
@@ -91,7 +103,7 @@
         }
 
         #third {
-            height: 835px;
+            height: 1300px;
             display: flex;
             align-items: center;
             border-radius: 0px;
@@ -301,6 +313,49 @@
         .template-demo {
             margin-top: 40px;
         }
+        @media (max-width: 700px) {
+			#first h1 {
+				font-size: 41px;
+				font-family: emoji;
+				font-weight: bolder;
+			}
+			#second h1 {
+				color: rgb(255, 255, 255);
+				-webkit-text-fill-color: rgb(255, 255, 255);
+				font-size: 26px;
+				font-weight: bold;
+			}
+			#second {
+				padding: 0;
+			}
+			#second .video-player {
+				padding-top: 0;
+			}
+	        #third {
+				padding:15px;
+				height: auto;
+			}
+			#third h1 {
+				font-size:38px;
+			}
+			#fifth .faq {
+				font-size: 36px;
+				text-align: center;
+			}
+			#fifth .faq-header-hr-section {
+				width: auto;
+			}
+			#fifth .faq-title {
+				font-size: 22px;
+				text-align: center;
+			}
+			.carousel {
+				padding: 0;
+			}
+			.sitebuilder{
+				 height: 82px;
+			}
+        }
     </style>
 </head>
 <body>
@@ -310,7 +365,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <div class="col-md-8" style="padding:0">
                 <h1 class="text-uppercase">never miss another client again</h1>
             </div>
         </div>
@@ -334,7 +389,7 @@
 
             <div class="col-md-12 video-player">
                 <iframe data-v-48ec9261="" width="871px" height="367px"
-                        src="https://www.youtube.com/embed/mX-Kui9RUJE?&start=0&end=0" frameborder="0"
+                        src="https://www.youtube.com/embed/VIbEJIrXkBA" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen="allowfullscreen" class=" video embed-responsive-item"
                         style="border-radius: 0px; border: 0px none rgb(0, 0, 0);max-width: 100%;"></iframe>
@@ -346,8 +401,27 @@
 <section id="third">
     <div class="container">
         <div class="row text-center">
-            <h1 class="text-uppercase">THE ZILLOW AR HAS ONE JOB!
-                <span class="blue-text">MAKE REALTORS</span> "<span class="blue-text">MORE MONEY</span>"</h1>
+            <h1 class="blue-text">
+                <span class="blue-text">Message all the Un-read leads sitting in your Zillow's Inbox,</span> <span>w/ the click of a button</span></h1>
+        </div>
+		<br></br>
+		<div class="row text-center">
+            <h1 class="blue-text">
+                <span class="blue-text">Start receiving pre-screened quality clients,</span> <span>texting you on your phone</span></h1>
+        </div>
+		<br></br>
+		<div class="row text-center">
+            <h1 class="blue-text">
+                <span class="blue-text">No need to answer your phone,</span> <span>or talk to 100's of clients all day long</span></h1>
+        </div>
+		<br></br>
+		<div class="row text-center">
+            <h1 class="blue-text">
+                <span class="blue-text">No more searching for the needle in the hey stack / </span> <span>perfect client</span></h1>
+        </div>
+		<br></br>
+		<div class="row text-center">
+			<img class="sitebuilder" src="https://storage.builderall.com//franquias/2/6337624/editor-html/6011254.png"  style="opacity: 1; border-radius: 0px; border: 0px none rgb(0, 0, 0); box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;">
         </div>
     </div>
 </section>
@@ -377,7 +451,7 @@
                 <div class="row faq-each-section">
                     <p class="faq-title blue-text">Can I download & use it on my phone?</p> <br/>
                     <p class="faq-text">No, the zillow auto responder only works on Desktops or Laptops - Using Windows
-                        7-10, 11.</p>
+                        7-10.</p>
                 </div>
 
                 <div class="row faq-each-section">
@@ -405,7 +479,7 @@
                         leads/clients?</p>
                     <p class="faq-text">Yes, the Z.W.A.R allows up to 5 keywords. Example, if you do not want anyone
                         with pets, you might choose key words, Cats, Dogs, Pets. In this case if anyone messages you and
-                        states the word cat, or dog, then you they will not be sent a message,</p>
+                        states the word cat, or dog, then they will not be sent a message,</p>
                 </div>
             </div>
         </div>
@@ -438,7 +512,7 @@
                                 <div class="col-sm-4">
                                     <h4 class="card-title"><span style="color: red;"><i class="fa fa-quote-left"></i></span></h4>
                                     <div class="template-demo">
-                                        <p>I started using the zillar ar, and literally within 3 minutes i could see it working. I started recieving texts coming in, and not just text messages, but fully qualified prescreen leads that were a prfect fit for my apartments. I went from someone who takes 100 calls every day, to instantly not needing to answr my phone any more. It quickly dawned on me that this was a complete game changer. I went from now, to woooooooow!</p>
+                                        <p>I started using the zillar ar, and literally within 3 minutes i could see it working. I started recieving texts coming in, and not just text messages, but fully qualified prescreen leads that were a perfect fit for my apartments. I went from someone who takes 100 calls every day, to instantly not needing to answer my phone any more. It quickly dawned on me that this was a complete game changer. I went from wow, to woooooooow!</p>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -452,7 +526,7 @@
                                     <h4 class="card-title"><span style="color: red;"><i class="fa fa-quote-left"></i></span></h4>
                                     <div class="template-demo">
                                         <p><strong>HOW DID I EVER LIVE WITH OUT IT!</strong></p>
-                                        <p>No I am dead serious. I remember spending hours every day answering the phone trying to find the needle in the hey stack/perfect client. Now all i do is read my text and pick the ones that best fit what i am looking for. I am making double if not triple the money and here's the best part. I am working half as much I Highly Recommend.</p>
+                                        <p>No I am dead serious. I remember spending hours every day answering the phone trying to find the needle in the hey stack/perfect client. Now all i do is read my text and pick the ones that best fit what i am looking for. I am making double if not triple the money and here's the best part. I am working half as much. I Highly Recommend.</p>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -487,11 +561,11 @@
         <div class="row">
             <div class="col-md-9"></div>
             <div class="col-md-3 footer-contact-info">
-                <p class="text-uppercase blue-text footer-contact-info_title">contact info</p>
+                <!--<p class="text-uppercase blue-text footer-contact-info_title">contact info</p>
 
                 <p class="footer-contact-info_content">26, Lane Street New York, USA</p>
 
-                <p class="footer-contact-info_content">9AM - 7PM Mon - Sat</p>
+                <p class="footer-contact-info_content">9AM - 7PM Mon - Sat</p>-->
             </div>
         </div>
     </div>

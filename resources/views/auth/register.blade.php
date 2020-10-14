@@ -1,6 +1,26 @@
 @extends('layouts.user')
 
 @section('content')
+	<style>
+	@media (max-width: 700px) {
+		img {
+			width: 85%;
+		}
+	}
+	</style>
+	<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5f5b0d3ef0e7167d000f547d/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
     <div class="step-one">
         <div class="container">
             <div class="logo text-center">
@@ -29,7 +49,7 @@
                 <div class="col-md-8">
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" width="759px" height="553px"
-                                src="https://www.youtube.com/embed/1sfGOrN33Q4?&playlist=1sfGOrN33Q4&loop=1&controls=0&start=0&end=0&playlist=1sfGOrN33Q4&loop=1&autoplay=1&mute=0&controls=0&start=0&end=0"
+                                src="https://www.youtube.com/embed/itBEXjf1Dck"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen="allowfullscreen"
@@ -50,7 +70,7 @@
             <div class="row text-center">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <a href="https://" rel="noreferrer" target="_blank" class="bt-text-area download-btn">DOWNLOAD
+                    <a href="{{url('/download/ZillowAR.rar')}}" rel="noreferrer" target="_blank" class="bt-text-area download-btn">DOWNLOAD
                         ZILLOW AR</a>
                 </div>
             </div>
@@ -78,7 +98,7 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                       name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                       name="name" value="{{ old('name') }}" required autocomplete="name">
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -172,13 +192,13 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6 footer-contact-info">
-                    <p class="text-uppercase blue-text footer-contact-info_title">CONTACT US</p>
+                <!--<p class="text-uppercase blue-text footer-contact-info_title">CONTACT US</p>
 
                     <p class="footer-contact-info_content">26, Lane Street New York, USA</p>
 
                     <p class="footer-contact-info_content">9AM - 7PM Mon - Sat</p>
 
-                    <p class="footer-contact-info_content">info@company.net +55 11 3256.9856</p>
+                    <p class="footer-contact-info_content">info@company.net +55 11 3256.9856</p>-->
                 </div>
             </div>
         </div>

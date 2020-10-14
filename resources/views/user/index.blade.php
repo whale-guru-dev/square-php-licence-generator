@@ -8,7 +8,7 @@
     <div class="container">
 
         <div class="starter-template">
-            <h1>Licence Generator</h1>
+            <h1>TheZWAR</h1>
             <p class="lead">Your Current Plan.</p>
         </div>
 
