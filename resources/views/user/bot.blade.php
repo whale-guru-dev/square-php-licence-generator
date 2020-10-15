@@ -12,18 +12,18 @@
             <div class="col-md-12">
                 <form method="POST">
                     <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">Input Fields</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-right">Zillow Username</label>
 
                         <div class="col-md-8">
-                            <input type="text" class="form-control" name="input-field" required>
+                            <input type="text" class="form-control" name="zil-username" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">Cookies</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-right">Zillow Password</label>
 
                         <div class="col-md-8">
-                            <input type="text" class="form-control" name="cookies" required>
+                            <input type="text" class="form-control" name="zil-pass" required>
                         </div>
                     </div>
 
