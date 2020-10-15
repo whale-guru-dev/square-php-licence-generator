@@ -29,12 +29,12 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Mac Address:</strong>
-                                <input class="form-control" type="text" name="mac" placeholder="Mac Address" value="{{ old('mac') }}" autofocus/>
-                            </div>
-                        </div>
+{{--                        <div class="col-xs-12 col-sm-12 col-md-12">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <strong>Mac Address:</strong>--}}
+{{--                                <input class="form-control" type="text" name="mac" placeholder="Mac Address" value="{{ old('mac') }}" autofocus/>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">

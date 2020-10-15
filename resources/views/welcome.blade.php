@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5f5b0d3ef0e7167d000f547d/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5f5b0d3ef0e7167d000f547d/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
 </script>
 <!--End of Tawk.to Script-->
 <html lang="en">
@@ -39,322 +39,401 @@ s0.parentNode.insertBefore(s1,s0);
 
     <![endif]-->
     <style>
-		body {
-			background: linear-gradient(90deg, rgba(240, 240, 240, 0.94) 0%, rgb(255, 255, 255) 100%);
-		}
-        section {
-            padding: 50px;
-        }
 
-        #first {
-            background: rgba(240, 240, 240, 0);
-            min-height: 50px;
-        }
-
-        #first h1 {
-            font-size: 55px;
+        h1, h2, h3, h4, h5 {
             font-weight: bold;
-            font-family: Muli Black, sans-serif;
         }
 
-        #first img {
-            opacity: 1;
-            border-radius: 0px;
-            border: 0px none rgb(0, 0, 0);
-            box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
-            width: 448px;
-            margin: auto;
+        h1 {
+            font-size: 80px;
         }
 
-        #first .signup-btn {
-            height: 64px;
-            width: 261px;
-            border-radius: 0px;
-            cursor: pointer;
-            border: 1px none rgba(255, 0, 0, 0.996);
-            background: rgba(7, 195, 249, 0.996);
-            box-shadow: rgb(166, 218, 255) 0px 0px 0px 0px;
-            padding: 18px !important;
-            font-family: "Muli Black", sans-serif;
-            font-size: 20px;
-            text-align: center;
-            font-weight: 700;
-            font-style: initial;
-            color: rgba(248, 248, 248, 0.996);
-            text-decoration: none;
+        h2 {
+            font-size: 45px;
         }
 
-        #second {
+        section#first {
             border-radius: 0px;
-            background: rgba(13, 13, 13, 0.996);
-            min-height: 200px;
+            background: rgba(241, 196, 15, 0.996);
+            height: 136px;
+            min-height: 50px;
             border: 0px none rgb(0, 0, 0);
         }
 
-        #second h1 {
-            color: rgb(255, 255, 255);
-            -webkit-text-fill-color: rgb(255, 255, 255);
+        .first-section-text {
+            font-family: Muli Black, sans-serif !important;
             font-size: 45px;
             font-weight: bold;
-        }
-
-        #second .video-player {
-            padding-top: 100px;
-        }
-
-        #third {
-            height: 1300px;
-            display: flex;
-            align-items: center;
-            border-radius: 0px;
-            background: rgba(6, 81, 173, 0.996);
-            min-height: 50px;
-            border: 0px none rgba(3, 150, 255, 0.996);
-        }
-
-        #third h1 {
-            font-family: "Muli Black", sans-serif;
-            font-size: 50px;
-            font-weight: bold;
-            display: block;
-            line-height: 1.1em;
-            color: rgb(255, 255, 255);
-            -webkit-text-fill-color: rgb(255, 255, 255);
-        }
-
-        .blue-text {
-            color: rgb(7, 195, 249);
-            -webkit-text-fill-color: rgb(7, 195, 249);
-        }
-
-        .purple-text {
-            color: rgb(6, 81, 173);
-            -webkit-text-fill-color: rgb(6, 81, 173);
-        }
-
-        #forth {
-            border-radius: 0px;
-            background: rgba(13, 13, 13, 0.996);
-            min-height: 200px;
-            border: 0px none rgb(0, 0, 0);
-
-        }
-
-        #forth h1 {
-            color: rgb(255, 255, 255);
-            -webkit-text-fill-color: rgb(255, 255, 255);
-            font-size: 45px;
-            font-weight: bold;
-        }
-
-        #forth .signup-btn {
-            height: 64px;
-            width: 261px;
-            border-radius: 0px;
-            cursor: pointer;
-            border: 1px none rgba(255, 0, 0, 0.996);
-            background: #0056b3;
-            box-shadow: rgb(166, 218, 255) 0px 0px 0px 0px;
-            padding: 18px !important;
-            font-family: "Muli Black", sans-serif;
-            font-size: 20px;
-            text-align: center;
-            font-weight: 700;
-            font-style: initial;
-            color: rgba(248, 248, 248, 0.996);
-            text-decoration: none;
+            line-height: 1.1em !important;
             margin-top: 40px;
         }
 
-        #fifth {
+        section#second {
             border-radius: 0px;
-            background: rgba(27, 37, 49, 0.996);
+            background: rgba(6, 81, 173, 0.996);
+            height: 1644px;
             min-height: 200px;
             border: 0px none rgb(0, 0, 0);
         }
 
-        #fifth .faq {
-            font-family: Lato, sans-serif;
-            font-size: 45px;
+        .second-section-text-img-container {
+            position: relative;
         }
 
-        #fifth .faq-header {
-            left: 13.5px;
-            padding: 15px;
+        .second-section-text-img--first {
+            position: absolute;
+            width: 600px;
+            padding: 5px;
             margin: 0px auto;
-            top: 37.125px;
-            transform: rotate(0deg) scale(1);
+            left: 20px;
+            top: 8px;
             z-index: auto;
-            max-width: 500px;
-
-            color: white;
+            max-width: 600px;
         }
 
-        #fifth .faq-header-hr-section {
-            width: 134px;
+        .second-section-text-img--second {
+            position: absolute;
+            width: 478px;
+            padding: 5px;
+            margin: 0px auto;
+            left: 615px;
+            top: 47px;
             z-index: auto;
             max-width: 500px;
-            transform: rotate(0deg) scale(1);
-            left: 12px;
-            top: 155.313px;
         }
 
-        #fifth .faq-header-hr {
+        .second-section-text-img--third {
+            position: absolute;
+            width: 479px;
+            padding: 5px;
+            margin: 0px auto;
+            left: 79px;
+            top: 143px;
+            z-index: auto;
+            max-width: 500px;
+        }
+
+        .second-section-text-img--forth {
+            position: absolute;
+            width: 479px;
+            padding: 5px;
+            margin: 0px auto;
+            left: 560px;
+            top: 139px;
+            z-index: auto;
+            max-width: 500px;
+        }
+
+        .second-section-text-img img {
+            width: 100%;
+            height: auto;
+        }
+
+
+        .color-yellow {
+            color: rgb(241, 196, 15);
+            -webkit-text-fill-color: rgb(241, 196, 15);
+        }
+
+        .color-white {
+            color: rgb(255, 255, 255);
+            -webkit-text-fill-color: rgb(255, 255, 255);
+        }
+
+        .second-section-head-container {
+            margin-top: 230px;
             border-radius: 0px;
-            border-top: none;
-            border-bottom: 4px solid rgba(7, 195, 249, 0.996);
+            border-bottom: 2px solid rgba(248, 248, 248, 0.996);
             box-shadow: blue 0px 0px 0px 0px;
         }
 
-        #fifth .faq-title {
-            left: 19.5px;
-            padding: 15px;
-            margin: 0px auto;
-            top: 1.125px;
+        .impact-font {
+            font-family: impact, chicago;
+        }
+
+        .second-section-head-text {
+            font-size: 45px;
+        }
+
+        .second-section-image-img_one--first {
+            position: absolute;
+            width: 353px;
+            height: auto;
+            z-index: auto;
+            margin: 0px;
+            padding: 5px;
+            left: -31px;
+            top: 0px;
             transform: rotate(0deg) scale(1);
+        }
+
+        .second-section-image-img_one--first div {
+            opacity: 1;
+            width: 353px;
+            height: 84px;
+            transform: perspective(706px);
+            display: inline-block;
+        }
+
+        .second-section-image-img_one--second {
+            position: absolute;
+            width: 261px;
+            left: 25px;
+            padding: 5px;
+            margin: 0px auto;
+            top: 71px;
             z-index: auto;
             max-width: 500px;
         }
 
-        #fifth .faq-text {
-            left: 19.5px;
-            padding: 15px;
+        .second-section-image-img_one--third {
+            position: absolute;
+            width: 268px;
+            padding: 5px;
             margin: 0px auto;
-            top: 68.125px;
-            transform: rotate(0deg) scale(1);
+            left: 14px;
+            top: 135px;
             z-index: auto;
             max-width: 500px;
         }
 
-        #fifth p {
-            color: white;
+        .second-section-image-img_two--first {
+            position: absolute;
+            width: 358px;
+            height: auto;
+            z-index: auto;
+            margin: 0px;
+            padding: 5px;
+            left: 405px;
+            top: 0px;
+            transform: rotate(0deg) scale(1);
         }
 
-        #fifth .faq-each-section {
-            padding-top: 40px;
+        .second-section-image-img_two--first div {
+            opacity: 1;
+            width: 358px;
+            height: 85px;
+            transform: perspective(716px);
+            display: inline-block;
+        }
+
+        .second-section-image-img_two--second {
+            position: absolute;
+            width: 280px;
+            padding: 5px;
+            margin: 0px auto;
+            left: 445px;
+            top: 119px;
+            z-index: auto;
+            max-width: 500px;
+        }
+
+        .second-section-image-img_three--first {
+            position: absolute;
+            width: 343px;
+            height: auto;
+            z-index: auto;
+            margin: 0px;
+            padding: 5px;
+            left: 838px;
+            top: 0px;
+            transform: rotate(0deg) scale(1);
+        }
+
+        .second-section-image-img_three--first div {
+            opacity: 1;
+            width: 343px;
+            height: 81px;
+            transform: perspective(686px);
+            display: inline-block;
+        }
+
+        .second-section-image-img_three--second {
+            position: absolute;
+            width: 522px;
+            left: 757px;
+            padding: 5px;
+            margin: 0px auto;
+            top: 71px;
+            z-index: auto;
+            max-width: 500px;
+        }
+
+        .second-section-image-img_three--third {
+            position: absolute;
+            width: 379px;
+            padding: 5px;
+            margin: 0px auto;
+            left: 827px;
+            top: 135px;
+            z-index: auto;
+            max-width: 500px;
+        }
+
+        .second-section-image-img_one--forth {
+            position: absolute;
+            width: 186px;
+            z-index: auto;
+            max-width: 500px;
+            margin: 0px auto;
+            padding: 5px;
+            left: 53px;
+            top: 635px;
+        }
+
+        .second-section-image-img_third--forth {
+            position: absolute;
+            width: 186px;
+            z-index: auto;
+            max-width: 500px;
+            margin: 0px auto;
+            padding: 5px;
+            left: 916px;
+            top: 635px;
+        }
+
+        .second-section-image-img_hr {
+            border-radius: 0px;
+            border-bottom: 2px solid rgba(248, 248, 248, 0.996);
+            box-shadow: blue 0px 0px 0px 0px;
+        }
+
+        .second-section-text-txt-first {
+            margin-top: 680px;
+        }
+
+        .second-section-text-txt-second {
+            margin-top: 0px;
+        }
+
+        .second-section-text-txt-third {
+            margin-top: 0px;
+        }
+
+        .second-section-text-txt-forth {
+            margin-top: 0px;
+        }
+
+        section#third {
+            border-radius: 0px;
+            background: rgba(6, 6, 6, 0.996);
+            border: 0px none rgb(0, 0, 0);
+            padding: 50px;
+        }
+
+        .third-section-button {
+            height: 60px;
+            width: 335px;
+            border-radius: 900px;
+            cursor: pointer;
+            transform: rotate(0deg) scale(1);
+            border: 0px none rgba(3, 150, 255, 0);
+            background: rgba(94, 148, 255, 0.996);
+            box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+
+            font-family: "Lato Black", sans-serif;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 700;
+            font-style: initial;
+            color: rgba(255, 255, 255, 0.996);
+            text-decoration: none;
+        }
+
+        .third-section-button:hover {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .bt-text-area {
+            margin: 0 auto;
+            vertical-align: middle;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        @media (max-width: 767px) {
+            .second-section-text-img {
+                position: relative !important;
+                left: 0 !important;
+                top: 0 !important;
+                height: auto !important;
+                width: auto !important;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+
+            .second-section-head-container {
+                margin-top: 0px !important;
+            }
+
+            .mobile-font-size {
+                font-size: 25px !important;
+            }
+
+            #second {
+                height: auto !important;
+            }
+
+            .second-section-text-txt-mobile {
+                margin-top: 0px !important;
+            }
+
+            .third-section-button {
+                width: 100% !important;
+            }
+        }
+
+        @media (max-width: 1179px) {
+            .second-section-text-img {
+                zoom: .9;
+                -webkit-transform: scale(.9);
+                transform: scale(.9);
+            }
+        }
+
+        @media (max-width: 1039px) {
+            .second-section-text-img {
+                zoom: .8;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 991px) {
+            .second-section-text-img {
+                zoom: .7;
+                -webkit-transform: scale(.9);
+                transform: scale(.9);
+            }
         }
 
         #footer {
+            padding-top: 50px;
+            padding-bottom: 50px;
             border-radius: 0px;
-            background: rgba(6, 6, 6, 0.996);
-            height: 200px;
-            min-height: 50px;
+            background: rgba(51, 51, 51, 0.996);
             border: 0px none rgb(0, 0, 0);
         }
 
-        #footer p {
-            color: white;
-        }
-
-        #footer .footer-contact-info_title {
+        .footer-contact-info_title {
             font-weight: bold;
-            font-size: 15px;
+            font-size: 18px;
         }
 
-        #footer .footer-contact-info_content {
+        .footer-contact-info_content {
             font-size: 13px;
-        }
-
-        .carousel {
-            margin: 30px auto 50px;
-            padding: 0 68px;
-        }
-        .carousel .item {
-            text-align: center;
-            overflow: hidden;
-            /*height: 160px;*/
-        }
-        .carousel .item .img-box {
-            background: #fff;
-            padding: 9px;
-            box-shadow: 0 6px 20px -6px rgba(0,0,0,0.4);
-        }
-        .carousel .item img {
-            margin: 0 auto;
-        }
-        .carousel .carousel-control {
-            width: 68px;
-            background: none;
-        }
-        .carousel .carousel-control i {
-            font-size: 28px;
-            position: absolute;
-            top: 50%;
-            display: inline-block;
-            margin-top: -15px;
-            z-index: 5;
-            left: 0;
-            right: 0;
-            color: rgba(0, 0, 0, 0.8);
-            text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
-        }
-        .carousel .carousel-indicators {
-            bottom: -40px;
-        }
-        .carousel-indicators li, .carousel-indicators li.active {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            margin: 1px 4px;
-            box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
-        }
-        .carousel-indicators li {
-            background: #999;
-            border-color: transparent;
-        }
-        .carousel-indicators li.active {
-            background: #555;
-        }
-
-        .cust-name {
-            font-style: italic;
-        }
-
-        .template-demo {
-            margin-top: 40px;
-        }
-        @media (max-width: 700px) {
-			#first h1 {
-				font-size: 41px;
-				font-family: emoji;
-				font-weight: bolder;
-			}
-			#second h1 {
-				color: rgb(255, 255, 255);
-				-webkit-text-fill-color: rgb(255, 255, 255);
-				font-size: 26px;
-				font-weight: bold;
-			}
-			#second {
-				padding: 0;
-			}
-			#second .video-player {
-				padding-top: 0;
-			}
-	        #third {
-				padding:15px;
-				height: auto;
-			}
-			#third h1 {
-				font-size:38px;
-			}
-			#fifth .faq {
-				font-size: 36px;
-				text-align: center;
-			}
-			#fifth .faq-header-hr-section {
-				width: auto;
-			}
-			#fifth .faq-title {
-				font-size: 22px;
-				text-align: center;
-			}
-			.carousel {
-				padding: 0;
-			}
-			.sitebuilder{
-				 height: 82px;
-			}
         }
     </style>
 </head>
@@ -364,35 +443,134 @@ s0.parentNode.insertBefore(s1,s0);
 <section id="first">
     <div class="container">
         <div class="row text-center">
-            <div class="col-md-2"></div>
-            <div class="col-md-8" style="padding:0">
-                <h1 class="text-uppercase">never miss another client again</h1>
-            </div>
-        </div>
-        <div class="row text-center">
-            <span><img src="{{ asset('assets/logo.png') }}" class="img-responsive"/></span>
-
-            <h3><strong>Try FREE - No Credit Card Required</strong></h3>
-
-            <a href="{{route('register')}}" class="btn signup-btn text-uppercase">try free download</a>
+            <h2 class="first-section-text color-white mobile-font-size">Zillow Auto Responder</h2>
         </div>
     </div>
 </section>
 
 <section id="second">
     <div class="container">
-        <div class="row text-center">
-            <h1 class="text-uppercase"><span class="blue-text">WISH CLIENTS WOULD CALL</span>, INSTEAD OF REPLYING IN
-                ZILLOW?</h1>
-            <h1 class="text-uppercase"><span class="blue-text">THE ZILLOW AR WILL AUTO REPLY TO ALL MESSAGES</span> &
-                TELL THEM TO CALL or TEXT YOU</h1>
+        <div class="row second-section-text-img-container">
+            <div class="second-section-text-img second-section-text-img--first">
+                <img src="{{asset('assets/6026863.png')}}"/>
+            </div>
+            <div class="second-section-text-img second-section-text-img--second">
+                <img src="{{asset('assets/6026837.png')}}"/>
+            </div>
 
-            <div class="col-md-12 video-player">
-                <iframe data-v-48ec9261="" width="871px" height="367px"
-                        src="https://www.youtube.com/embed/VIbEJIrXkBA" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen="allowfullscreen" class=" video embed-responsive-item"
-                        style="border-radius: 0px; border: 0px none rgb(0, 0, 0);max-width: 100%;"></iframe>
+            <div class="second-section-text-img second-section-text-img--third">
+                <img src="{{asset('assets/6026843.png')}}"/>
+            </div>
+            <div class="second-section-text-img second-section-text-img--forth">
+                <img src="{{asset('assets/6026844.png')}}"/>
+            </div>
+        </div>
+
+        <div class="row text-center second-section-head-container">
+            <div class="col-md-12">
+                <h3 class="second-section-head-text impact-font mobile-font-size">
+                    <em class="color-white">It's as easy as </em>
+                    <em class="color-yellow">1,2,3</em>
+                </h3>
+            </div>
+        </div>
+
+        <div class="row second-section-text-img-container text-center">
+            <div class="second-section-text-img second-section-image-img_one--first">
+                <div>
+                    <img src="{{asset('assets/6026623.png')}}"/>
+                </div>
+            </div>
+
+            <div class="second-section-text-img second-section-image-img_one--second">
+                <h2 style="text-align: left;">
+                    <span style="font-size:25px;">
+                        <font color="#ffffff"
+                              style="-webkit-text-fill-color: rgb(255, 255, 255);">Enter Your Message</font>
+                    </span>
+                </h2>
+            </div>
+
+            <div class="second-section-text-img second-section-image-img_one--third">
+                <div>
+                    <img src="{{asset('assets/6096812.png')}}"/>
+                </div>
+            </div>
+
+            <div class="second-section-text-img second-section-image-img_one--forth">
+                <div class="second-section-image-img_hr"></div>
+            </div>
+
+            <div class="second-section-text-img second-section-image-img_two--first">
+                <div>
+                    <img src="{{asset('assets/6026617.png')}}"/>
+                </div>
+            </div>
+
+            <div class="second-section-text-img second-section-image-img_two--second">
+                <div>
+                    <img src="{{asset('assets/6027324.png')}}"/>
+                </div>
+            </div>
+
+            <div class="second-section-text-img second-section-image-img_three--first">
+                <div>
+                    <img src="{{asset('assets/6026612.png')}}"/>
+                </div>
+            </div>
+
+            <div class="second-section-text-img second-section-image-img_three--second">
+                <h2 style="text-align: left;">
+                    <span style="font-size:25px;">
+                        <font color="#ffffff" style="-webkit-text-fill-color: rgb(255, 255, 255);">Start Recieving Qualified Leads Via Text</font>
+                    </span>
+                </h2>
+            </div>
+
+            <div class="second-section-text-img second-section-image-img_three--third">
+                <div>
+                    <img src="{{asset('assets/6096815.png')}}"/>
+                </div>
+            </div>
+
+            <div class="second-section-text-img second-section-image-img_third--forth">
+                <div class="second-section-image-img_hr"></div>
+            </div>
+        </div>
+
+        <div class="row text-center second-section-text-txt-first second-section-text-txt-mobile">
+            <div class="col-md-12">
+                <h2 class="first-section-text mobile-font-size">
+                    <span class="color-yellow">Start receiving pre-screened qualified leads via text </span>
+                    <span class="color-white">/ & call back only the ones that best fit your landlords wishes</span>
+                </h2>
+            </div>
+        </div>
+
+        <div class="row text-center second-section-text-txt-second">
+            <div class="col-md-12">
+                <h2 class="first-section-text mobile-font-size">
+                    <span class="color-yellow">Cuts phone calls by </span>
+                    <span class="color-white">80%</span>
+                </h2>
+            </div>
+        </div>
+
+        <div class="row text-center second-section-text-txt-third">
+            <div class="col-md-12">
+                <h2 class="first-section-text mobile-font-size">
+                    <span class="color-yellow">No more talking to dozens of people</span>
+                    <span class="color-white">, searching for that needle in the hey stack/ Perfect client</span>
+                </h2>
+            </div>
+        </div>
+
+        <div class="row text-center second-section-text-txt-forth">
+            <div class="col-md-12">
+                <h2 class="first-section-text mobile-font-size">
+                    <span class="color-yellow">Cuts your work time by </span>
+                    <span class="color-white">80%</span>
+                </h2>
             </div>
         </div>
     </div>
@@ -401,156 +579,30 @@ s0.parentNode.insertBefore(s1,s0);
 <section id="third">
     <div class="container">
         <div class="row text-center">
-            <h1 class="blue-text">
-                <span class="blue-text">Message all the Un-read leads sitting in your Zillow's Inbox,</span> <span>w/ the click of a button</span></h1>
+            <div class="col-md-12">
+                <h2 class="second-section-head-text impact-font mobile-font-size">
+                    <span class="color-white">TRY FREE - </span>
+                    <span class="color-yellow">NO CREDIT CARD REQUIRED</span>
+                </h2>
+            </div>
         </div>
-		<br></br>
-		<div class="row text-center">
-            <h1 class="blue-text">
-                <span class="blue-text">Start receiving pre-screened quality clients,</span> <span>texting you on your phone</span></h1>
-        </div>
-		<br></br>
-		<div class="row text-center">
-            <h1 class="blue-text">
-                <span class="blue-text">No need to answer your phone,</span> <span>or talk to 100's of clients all day long</span></h1>
-        </div>
-		<br></br>
-		<div class="row text-center">
-            <h1 class="blue-text">
-                <span class="blue-text">No more searching for the needle in the hey stack / </span> <span>perfect client</span></h1>
-        </div>
-		<br></br>
-		<div class="row text-center">
-			<img class="sitebuilder" src="https://storage.builderall.com//franquias/2/6337624/editor-html/6011254.png"  style="opacity: 1; border-radius: 0px; border: 0px none rgb(0, 0, 0); box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;">
-        </div>
-    </div>
-</section>
 
-<section id="forth">
-    <div class="container">
+        <br/><br/>
+
         <div class="row text-center">
-            <div class="">
-                <h1 class="text-uppercase"><span class="purple-text">try free</span> - no credit card required</h1>
-                <a href="{{route('register')}}" class="btn signup-btn text-uppercase">try free download</a>
+            <div class="col-md-12">
+                <a class="third-section-button bt-text-area" href="{{route('login')}}">START YOUR FREE TRIAL</a>
             </div>
         </div>
-    </div>
-</section>
 
-<section id="fifth">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 faq-header">
-                <h1 class="faq">Frequently asked questions</h1>
-                <div class="faq-header-hr-section">
-                    <hr class="faq-header-hr"/>
-                </div>
-            </div>
+        <br/><br/>
 
-            <div class="col-md-8">
-                <div class="row faq-each-section">
-                    <p class="faq-title blue-text">Can I download & use it on my phone?</p> <br/>
-                    <p class="faq-text">No, the zillow auto responder only works on Desktops or Laptops - Using Windows
-                        7-10.</p>
-                </div>
-
-                <div class="row faq-each-section">
-                    <p class="faq-title blue-text">How much is it after the trial?</p>
-                    <p class="faq-text">After the 7 day trial is over, you will be promted to make a payment. You will
-                        have 2 choices. Pay as you go, Monthly $19.99 Or get 50% off and pay $119.99 for a year.</p>
-                </div>
-
-                <div class="row faq-each-section">
-                    <p class="faq-title blue-text">Does the Z.W.A.R check my messages all day?</p>
-                    <p class="faq-text">Yes if you want, you can leave it running all day. Every 30 minutes, it will
-                        check your Zillow inbox for new messages.</p>
-                </div>
-
-                <div class="row faq-each-section">
-                    <p class="faq-title blue-text">Can I only use it in the morning to reply to overnight messages &
-                        then stop it?</p>
-                    <p class="faq-text">Yes, if you choose to use it only in the mornings when you start work, then you
-                        would open app -> Press start -> Allow it to reply to all new unread messages -> Then press stop
-                        and close the app for the day. </p>
-                </div>
-
-                <div class="row faq-each-section">
-                    <p class="faq-title blue-text">Can I set it to exclude & not send message to certain
-                        leads/clients?</p>
-                    <p class="faq-text">Yes, the Z.W.A.R allows up to 5 keywords. Example, if you do not want anyone
-                        with pets, you might choose key words, Cats, Dogs, Pets. In this case if anyone messages you and
-                        states the word cat, or dog, then they will not be sent a message,</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="testimonial">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-23 text-center">
-                <h2><strong>Testimonials</strong></h2>
-                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-                    <!-- Wrapper for carousel items -->
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <h4 class="card-title"><span style="color: red;"><i class="fa fa-quote-left"></i></span></h4>
-                                    <div class="template-demo">
-                                        <p>I had no idea how many leads I was waisting by not checking my zillow inbox more often. What I love about the Zillow AR is how it checks my inbox for new messages every 30 minutes. I have been using this amazing software for almost 1 month and I have not lost one single lead.</p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="profile">
-                                                <h4 class="cust-name">- Clair S -</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <h4 class="card-title"><span style="color: red;"><i class="fa fa-quote-left"></i></span></h4>
-                                    <div class="template-demo">
-                                        <p>I started using the zillar ar, and literally within 3 minutes i could see it working. I started recieving texts coming in, and not just text messages, but fully qualified prescreen leads that were a perfect fit for my apartments. I went from someone who takes 100 calls every day, to instantly not needing to answer my phone any more. It quickly dawned on me that this was a complete game changer. I went from wow, to woooooooow!</p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="profile">
-                                                <h4 class="cust-name">- Benjamin -</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <h4 class="card-title"><span style="color: red;"><i class="fa fa-quote-left"></i></span></h4>
-                                    <div class="template-demo">
-                                        <p><strong>HOW DID I EVER LIVE WITH OUT IT!</strong></p>
-                                        <p>No I am dead serious. I remember spending hours every day answering the phone trying to find the needle in the hey stack/perfect client. Now all i do is read my text and pick the ones that best fit what i am looking for. I am making double if not triple the money and here's the best part. I am working half as much. I Highly Recommend.</p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="profile">
-                                                <h4 class="cust-name">- Steven B -</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="forth">
-    <div class="container">
         <div class="row text-center">
-            <div class="">
-                <h1 class="text-uppercase"><span class="purple-text">try free</span> - no credit card required</h1>
-                <a href="{{route('register')}}" class="btn signup-btn text-uppercase">try free download</a>
+            <div class="col-md-12">
+                <h1 class="impact-font mobile-font-size">
+                    <span class="color-white">IT'S A LEAD FOUNTAIN, </span>
+                    <span class="color-yellow">THAT YOU CAN TURN ON & OFF ANYTIME</span>
+                </h1>
             </div>
         </div>
     </div>
@@ -559,13 +611,15 @@ s0.parentNode.insertBefore(s1,s0);
 <section id="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-9"></div>
+            <div class="col-md-2"></div>
             <div class="col-md-3 footer-contact-info">
-                <!--<p class="text-uppercase blue-text footer-contact-info_title">contact info</p>
+                <p class="text-uppercase color-white footer-contact-info_title">contact us</p>
 
-                <p class="footer-contact-info_content">26, Lane Street New York, USA</p>
+                <p class="color-white footer-contact-info_content">26, Lane Street New York, USA</p>
 
-                <p class="footer-contact-info_content">9AM - 7PM Mon - Sat</p>-->
+                <p class="color-white footer-contact-info_content">9AM - 7PM Mon - Sat</p>
+
+                <p class="color-white footer-contact-info_content">info@company.net +55 11 3256.9856</p>
             </div>
         </div>
     </div>

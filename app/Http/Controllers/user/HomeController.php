@@ -204,4 +204,21 @@ class HomeController extends Controller
             }
         }
     }
+
+    public function botView()
+    {
+        return view('user.bot');
+        if(Auth::user()->licence) {
+            $licence = Auth::user()->licence;
+
+            if ((strtotime($licence->expired) - time()) > 0) {
+                return view('user.bot');
+            } else {
+                return redirect()->route('user.home');
+            }
+
+        } else {
+            return redirect()->route('user.home');
+        }
+    }
 }

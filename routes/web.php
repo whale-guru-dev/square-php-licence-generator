@@ -29,6 +29,7 @@ Route::get('/home', 'user\HomeController@index')->name('user.home');
 Route::get('/profile', 'user\HomeController@profile')->name('user.profile');
 Route::get('/plans', 'user\HomeController@planView')->name('user.plan');
 Route::get('/subscribe-plan/{plan}', 'user\HomeController@subscribeView')->name('subscribe-plan');
+Route::get('/bot', 'user\HomeController@botView')->name('user.bot');
 
 Route::post('/update-profile', 'user\HomeController@updateProfile')->name('user.update.profile');
 Route::post('/update-password', 'user\HomeController@updatePassword')->name('user.update.password');

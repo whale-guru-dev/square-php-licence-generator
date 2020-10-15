@@ -83,7 +83,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required | email | unique:users',
-            'mac' => 'required | unique:users',
+//            'mac' => 'required | unique:users',
             'password' => 'required | min:5',
             'plan' => 'required'
         ]);
@@ -91,7 +91,7 @@ class UserController extends Controller
         $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
-            'mac' => $request['mac'],
+//            'mac' => $request['mac'],
             'password' => Hash::make($request['password']),
         ]);
 

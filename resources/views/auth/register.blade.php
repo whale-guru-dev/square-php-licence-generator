@@ -124,21 +124,21 @@ s0.parentNode.insertBefore(s1,s0);
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="email"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('Mac Address') }}</label>
+{{--                        <div class="form-group row">--}}
+{{--                            <label for="email"--}}
+{{--                                   class="col-md-4 col-form-label text-md-right">{{ __('Mac Address') }}</label>--}}
 
-                            <div class="col-md-6">
-                                <input id="mac" type="text" class="form-control @error('mac') is-invalid @enderror"
-                                       name="mac" value="{{ old('mac') }}" required autocomplete="mac">
+{{--                            <div class="col-md-6">--}}
+{{--                                <input id="mac" type="text" class="form-control @error('mac') is-invalid @enderror"--}}
+{{--                                       name="mac" value="{{ old('mac') }}" required autocomplete="mac">--}}
 
-                                @error('mac')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
+{{--                                @error('mac')--}}
+{{--                                <span class="invalid-feedback" role="alert">--}}
+{{--                                    <strong>{{ $message }}</strong>--}}
+{{--                                </span>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                         <div class="form-group row">
                             <label for="password"
