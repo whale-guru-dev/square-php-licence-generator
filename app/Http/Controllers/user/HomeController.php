@@ -231,7 +231,9 @@ class HomeController extends Controller
             'button' => 'required'
         ]);
 
-        if(Auth::user()->cookies) {
+        $user = Auth::user();
+
+        if($user['cookies']) {
             return back()->with('success', 'Running bot');
         } else {
             return back()->with('alert', "Your account is not active yet.  We will email you when your account is active and approved.");
