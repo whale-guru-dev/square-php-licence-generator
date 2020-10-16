@@ -43,7 +43,11 @@
                                         <input type="text" name="email" class="form-control input-sz"
                                                value="{{$user->email}}">
                                     </div>
-
+                                    <div class="form-group col-md-4">
+                                        <label>Cookies</label>
+                                        <input type="text" name="cookies" class="form-control input-sz"
+                                               value="{{$user->cookies}}">
+                                    </div>
                                     <hr/>
                                     <button type="submit" class="btn btn-lg btn-primary btn-block">Update</button>
 

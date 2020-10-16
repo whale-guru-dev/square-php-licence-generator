@@ -199,9 +199,7 @@ class HomeController extends Controller
             return back()->with('success', 'Password Changed');
         }
         else {
-            {
-                return back()->with('alert', 'Password Not Changed');
-            }
+            return back()->with('alert', 'Password Not Changed');
         }
     }
 
@@ -219,6 +217,24 @@ class HomeController extends Controller
 
         } else {
             return redirect()->route('user.home');
+        }
+    }
+
+    public function runBot(Request $request)
+    {
+        $request->validate([
+            'zil_username' => 'required',
+            'zil_pass' => 'required',
+            'num_msg' => 'required',
+            'pre_msg' => 'required',
+            'exclusive_words' => 'required',
+            'button' => 'required'
+        ]);
+
+        if(Auth::user()->cookies) {
+            return back()->with('success', 'Running bot');
+        } else {
+            return back()->with('alert', "Your account is not active yet.  We will email you when your account is active and approved.");
         }
     }
 }

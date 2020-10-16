@@ -38,6 +38,13 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
+                                <strong>Cookies:</strong>
+                                <input type="text" name="cookies" class="form-control" placeholder="Cookies" value="{{ old('cookies') }}" autofocus/>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
                                 <strong>Password:</strong>
                                 <input class="form-control" type="password" name="password" placeholder="Password" />
                             </div>
