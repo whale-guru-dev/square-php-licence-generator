@@ -14,7 +14,7 @@ class ChangeUserTableCookiesField extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->json('cookies')->change();
+            $table->text('cookies')->change();
         });
     }
 
