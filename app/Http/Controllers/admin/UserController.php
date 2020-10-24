@@ -68,17 +68,14 @@ class UserController extends Controller
 
         $user['name'] = $request->name;
 
-//        dd(json_decode(stripslashes($request['cookies'])));exit;
-
         if ($request->cookies)
             $user['cookies'] = $request['cookies'];
 
         $user->save();
 
-        if ($request['cookies']) {
-            Mail::to($user)->send(new CookieActivated($user));
-//            return new CookieActivated($user);
-        }
+//        if ($request['cookies']) {
+//            Mail::to($user)->send(new CookieActivated($user));
+//        }
 
         return back()->withSuccess('User Profile Updated Successfuly');
     }
