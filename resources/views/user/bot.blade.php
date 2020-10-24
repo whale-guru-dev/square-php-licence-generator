@@ -13,12 +13,15 @@
                 <form method="POST" action="{{route('user.bot')}}">
                     @csrf
                     <div class="form-group row">
-                        <label for="zil_username" class="col-md-4 col-form-label text-md-right">Zillow Username</label>
+                        <label for="zillow_username" class="col-md-4 col-form-label text-md-right">Zillow Username</label>
 
                         <div class="col-md-8">
-                            <input id="zil_username" type="text" class="form-control @error('zil_username') is-invalid @enderror" name="zil_username" required>
+                            <input id="zillow_username" type="text" class="form-control @error('zillow_username') is-invalid @enderror" name="zillow_username"
+                                   @if(Auth::user()->botInfoForUser->zillow_username) readonly @endif
+                                value="@if(Auth::user()->botInfoForUser->zillow_username) {{Auth::user()->botInfoForUser->zillow_username}} @endif"
+                                   required>
 
-                            @error('zil_username')
+                            @error('zillow_username')
                             <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -27,12 +30,15 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="zil_pass" class="col-md-4 col-form-label text-md-right">Zillow Password</label>
+                        <label for="zillow_password" class="col-md-4 col-form-label text-md-right">Zillow Password</label>
 
                         <div class="col-md-8">
-                            <input id="zil_pass" type="text" class="form-control @error('zil_pass') is-invalid @enderror" name="zil_pass" required>
+                            <input id="zillow_password" type="text" class="form-control @error('zillow_password') is-invalid @enderror" name="zillow_password"
+                                   @if(Auth::user()->botInfoForUser->zillow_password) readonly @endif
+                                   value="@if(Auth::user()->botInfoForUser->zillow_password) {{Auth::user()->botInfoForUser->zillow_password}} @endif"
+                                   required>
 
-                            @error('zil_pass')
+                            @error('zillow_password')
                             <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -82,24 +88,16 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label for="button" class="col-md-4 col-form-label text-md-right">Button</label>
-
-                        <div class="col-md-8">
-                            <input id="button" type="text" class="form-control @error('button') is-invalid @enderror" name="button" required>
-
-                            @error('button')
-                            <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-
                     <div class="row text-center">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <button type="submit" class="bt-text-area download-btn">
                                 Run
+                            </button>
+                        </div>
+
+                        <div class="col-md-6">
+                            <button type="button" class="bt-text-area download-btn" id="changeAccountBtn">
+                                Request for Changing Zillow Account Setting
                             </button>
                         </div>
                     </div>
@@ -107,4 +105,18 @@
             </div>
         </div>
     </div>
+
+    <form method="post" action="{{route('user.request.zillow')}}" id="change_zillow_account" style="display: none;">
+        @csrf
+    </form>
+
+
+@endsection
+
+@section('js')
+    <script>
+        $( "#changeAccountBtn" ).click(function () {
+            $("#change_zillow_account").submit();
+        });
+    </script>
 @endsection

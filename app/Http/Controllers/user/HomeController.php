@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 
 
 use App\Http\Controllers\Controller;
+use App\Model\BotInfoForUsers;
 use App\Model\Licences;
 use App\Model\Plans;
 use App\Model\Transactions;
@@ -16,14 +17,18 @@ use Square\Models\Money;
 use Square\Models\CreatePaymentRequest;
 use Square\Exceptions\ApiException;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
 use App\Traits\SubscribeTrait;
+
+use GuzzleHttp\Psr7\Request as GuzzleRequest;
 
 class HomeController extends Controller
 {
 
     use SubscribeTrait;
+
     /**
      * Create a new controller instance.
      *
@@ -77,7 +82,7 @@ class HomeController extends Controller
             $pid = $_POST['pid'];
             $plan = Plans::find($pid);
 
-            if($plan->price == 0) {
+            if ($plan->price == 0) {
 
                 $this->subscribe_plan_for_user($plan);
 
@@ -132,17 +137,16 @@ class HomeController extends Controller
     {
         $plan = Plans::find($plan);
 
-        if($plan->price == 0)
-        {
-            if(Auth::user()->licence) {
+        if ($plan->price == 0) {
+            if (Auth::user()->licence) {
 //                if(Auth::user()->licence->plan_id == $plan->id) {
-                    return redirect()->route('user.home')->with('alert', 'You cannot use free plan again');
+                return redirect()->route('user.home')->with('alert', 'You cannot use free plan again');
 //                }
             } else {
                 $this->subscribe_plan_for_user($plan);
                 return redirect()->route('user.home')->with('success', 'Plan subscribed successfully');
             }
-        } else if(Auth::user()->licence && Auth::user()->licence->plan->price > $plan->price) {
+        } else if (Auth::user()->licence && Auth::user()->licence->plan->price > $plan->price) {
             $licence = Auth::user()->licence;
 
             if ((strtotime($licence->expired) - time()) > 0) {
@@ -170,7 +174,7 @@ class HomeController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::user()->id,'id')]
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::user()->id, 'id')]
         ]);
 
 
@@ -192,13 +196,11 @@ class HomeController extends Controller
 
         $user = Auth::user();
 
-        if(Hash::check(Input::get('old_password'), $user['password']))
-        {
+        if (Hash::check(Input::get('old_password'), $user['password'])) {
             $user->password = bcrypt(Input::get('password'));
             $user->save();
             return back()->with('success', 'Password Changed');
-        }
-        else {
+        } else {
             return back()->with('alert', 'Password Not Changed');
         }
     }
@@ -206,7 +208,7 @@ class HomeController extends Controller
     public function botView()
     {
         return view('user.bot');
-        if(Auth::user()->licence) {
+        if (Auth::user()->licence) {
             $licence = Auth::user()->licence;
 
             if ((strtotime($licence->expired) - time()) > 0) {
@@ -222,21 +224,70 @@ class HomeController extends Controller
 
     public function runBot(Request $request)
     {
-        $request->validate([
-            'zil_username' => 'required',
-            'zil_pass' => 'required',
-            'num_msg' => 'required',
-            'pre_msg' => 'required',
-            'exclusive_words' => 'required',
-            'button' => 'required'
-        ]);
-
         $user = Auth::user();
+        $botInfoForUser = BotInfoForUsers::where('user_id', $user->id)->first();
+        if ($botInfoForUser) {
+            $request->validate([
+                'zillow_username' => [
+                    'required',
+                    Rule::unique('bot_info_for_users')->ignore($botInfoForUser->id)],
+                'zillow_password' => 'required',
+                'num_msg' => 'required',
+                'pre_msg' => 'required',
+                'exclusive_words' => 'required'
+            ]);
 
-        if($user['cookies']) {
-            return back()->with('success', 'Running bot');
+            $botInfoForUser->update([
+                'num_msg' => $request['num_msg'],
+                'msg' => $request['pre_msg'],
+                'blacklist_words' => $request['exclusive_words'],
+                'run' => false
+            ]);
+        } else {
+            $request->validate([
+                'zillow_username' => [
+                    'required',
+                    'unique:bot_info_for_users'],
+                'zillow_password' => 'required',
+                'num_msg' => 'required',
+                'pre_msg' => 'required',
+                'exclusive_words' => 'required'
+            ]);
+
+            $botInfoForUser = BotInfoForUsers::create([
+                'user_id' => $user['id'],
+                'zillow_username' => $request['zillow_username'],
+                'zillow_password' => $request['zillow_password'],
+                'num_msg' => $request['num_msg'],
+                'msg' => $request['pre_msg'],
+                'blacklist_words' => $request['exclusive_words'],
+                'run' => false
+            ]);
+        }
+
+
+        if ($user['cookies']) {
+            return back()->with('success', 'Your request for run bot requested. We will email you when your bot successfully run.');
         } else {
             return back()->with('alert', "Your account is not active yet.  We will email you when your account is active and approved.");
         }
+    }
+
+    public function changeZillowAccountRequest(Request $request)
+    {
+        $user = Auth::user();
+
+        $botInfoForUser = BotInfoForUsers::where('user_id', $user->id)->first();
+
+        $botInfoForUser->update([
+            'zillow_username' => '',
+            'zillow_password' => ''
+        ]);
+
+        $user->update([
+            'cookies' => ''
+        ]);
+
+        return back()->with('success', 'You can change zillow account info.');
     }
 }

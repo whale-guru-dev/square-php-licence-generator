@@ -68,6 +68,8 @@ class UserController extends Controller
 
         $user['name'] = $request->name;
 
+//        dd(json_decode(stripslashes($request['cookies'])));exit;
+
         if ($request->cookies)
             $user['cookies'] = $request['cookies'];
 
@@ -102,7 +104,7 @@ class UserController extends Controller
                 'name' => $request['name'],
                 'email' => $request['email'],
 //            'mac' => $request['mac'],
-                'cookies' => $request['cookies'],
+                'cookies' => json_encode($request['cookies'],JSON_UNESCAPED_SLASHES),
                 'password' => Hash::make($request['password']),
             ]);
         } else {

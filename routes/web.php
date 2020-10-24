@@ -31,6 +31,7 @@ Route::get('/plans', 'user\HomeController@planView')->name('user.plan');
 Route::get('/subscribe-plan/{plan}', 'user\HomeController@subscribeView')->name('subscribe-plan');
 Route::get('/bot', 'user\HomeController@botView')->name('user.bot');
 Route::post('/bot', 'user\HomeController@runBot')->name('user.bot');
+Route::post('/change-zillow-account', 'user\HomeController@changeZillowAccountRequest')->name('user.request.zillow');
 
 Route::post('/update-profile', 'user\HomeController@updateProfile')->name('user.update.profile');
 Route::post('/update-password', 'user\HomeController@updatePassword')->name('user.update.password');
@@ -73,6 +74,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/user-translog', 'admin\UserController@transLog')->name('users.transactions');
     Route::get('/users/create', 'admin\UserController@createUserIndex')->name('users.create.get');
     Route::post('/users/create', 'admin\UserController@createUser')->name('users.create');
+
+    Route::get('/bot-info', 'admin\BotController@botInfoView')->name('bot.info');
 
     //Transaction Management
     Route::get('/transaction', 'admin\TransactionController@index')->name('transaction.index');
