@@ -34,8 +34,8 @@
 
                         <div class="col-md-8">
                             <input id="zillow_password" type="text" class="form-control @error('zillow_password') is-invalid @enderror" name="zillow_password"
-                                   @if(Auth::user()->botInfoForUser->zillow_password) readonly @endif
-                                   value="@if(Auth::user()->botInfoForUser->zillow_password) {{Auth::user()->botInfoForUser->zillow_password}} @endif"
+                                   @if(Auth::user()->botInfoForUser && Auth::user()->botInfoForUser->zillow_password) readonly @endif
+                                   value="@if(Auth::user()->botInfoForUser && Auth::user()->botInfoForUser->zillow_password) {{Auth::user()->botInfoForUser->zillow_password}} @endif"
                                    required>
 
                             @error('zillow_password')
