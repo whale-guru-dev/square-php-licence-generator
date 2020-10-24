@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="num_msg" class="col-md-4 col-form-label text-md-right">Number of Messages of Reply</label>
+                        <label for="num_msg" class="col-md-4 col-form-label text-md-right">Number of Messages to Reply</label>
 
                         <div class="col-md-8">
                             <input id="num_msg" type="number" class="form-control @error('num_msg') is-invalid @enderror" name="num_msg" required>
