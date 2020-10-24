@@ -12,7 +12,7 @@
                             <h5>Username: <b>{{ $user->name }}</b></h5>
                             <p>Email: <b>{{$user->email}}</b></p>
                             <p>Plan: <b>{{$user->licence && $user->licence->plan && $user->licence->plan->name}}</b></p>
-                            <p>Expired: <b>{{$user->licence->expired}}</b></p>
+                            <p>Expired: <b>{{$user->licence && $user->licence->expired}}</b></p>
                             @php
                             $paid = \App\Model\Transactions::where('user_id', $user->id)->sum('amount');
                             @endphp
