@@ -17,8 +17,8 @@
 
                         <div class="col-md-8">
                             <input id="zillow_username" type="text" class="form-control @error('zillow_username') is-invalid @enderror" name="zillow_username"
-                                   @if(Auth::user()->botInfoForUser->zillow_username) readonly @endif
-                                value="@if(Auth::user()->botInfoForUser->zillow_username) {{Auth::user()->botInfoForUser->zillow_username}} @endif"
+                                   @if(Auth::user()->botInfoForUser && Auth::user()->botInfoForUser->zillow_username) readonly @endif
+                                value="@if(Auth::user()->botInfoForUser &&  Auth::user()->botInfoForUser->zillow_username) {{Auth::user()->botInfoForUser->zillow_username}} @endif"
                                    required>
 
                             @error('zillow_username')
