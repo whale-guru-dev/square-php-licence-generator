@@ -25,7 +25,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Price:</strong>
-                                <input class="form-control" type="text" name="price" placeholder="Price" value="{{ old('price') }}" autofocus/>
+                                <input class="form-control" type="number" name="price" placeholder="Price" value="{{ old('price') }}" autofocus/>
                             </div>
                         </div>
 
