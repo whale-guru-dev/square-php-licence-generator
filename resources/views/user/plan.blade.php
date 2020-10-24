@@ -29,11 +29,11 @@
 
                                 </div>
 
-                                @if(Auth::user()->licence->plan_id !== $eachPlan->id)
+                                @if(Auth::user()->licence && Auth::user()->licence->plan_id !== $eachPlan->id)
                                 <div class="card-footer">
                                     <a class="btn btn-{{$colors[$loop->index]}} btn-block"
                                        href="{{route('subscribe-plan', $eachPlan->id)}}">
-                                        @if(Auth::user()->licence->plan->price > $eachPlan->price)
+                                        @if(Auth::user()->licence && Auth::user()->licence->plan->price > $eachPlan->price)
                                             Downgrade
                                         @else
                                             Upgrade
@@ -42,7 +42,7 @@
                                 </div>
                                 @else
                                     <div class="card-footer">
-                                        @if((strtotime(Auth::user()->licence->expired) - time()) < 0)
+                                        @if((strtotime(Auth::user()->licence && Auth::user()->licence->expired) - time()) < 0)
                                             <a class="btn btn-{{$colors[$loop->index]}} btn-block"
                                                href="{{route('subscribe-plan', $eachPlan->id)}}">Purchase</a>
                                         @else
