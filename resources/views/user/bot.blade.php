@@ -122,7 +122,7 @@
         setInterval(function() {
             $.ajax({
                 type:"POST",
-                url: {{route('user.check.bot')}},
+                url: "{{route('user.check.bot')}}",
                 data: {
                     uid : {{Auth::user()->id}},
                     _token: {{csrf_token()}}
