@@ -32,6 +32,7 @@ Route::get('/subscribe-plan/{plan}', 'user\HomeController@subscribeView')->name(
 Route::get('/bot', 'user\HomeController@botView')->name('user.bot');
 Route::post('/bot', 'user\HomeController@runBot')->name('user.bot');
 Route::post('/change-zillow-account', 'user\HomeController@changeZillowAccountRequest')->name('user.request.zillow');
+Route::post('/check-message-sent', 'user\HomeController@checkBotRun')->name('user.check.bot');
 
 Route::post('/update-profile', 'user\HomeController@updateProfile')->name('user.update.profile');
 Route::post('/update-password', 'user\HomeController@updatePassword')->name('user.update.password');

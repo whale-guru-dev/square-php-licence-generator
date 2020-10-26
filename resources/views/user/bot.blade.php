@@ -118,5 +118,24 @@
         $( "#changeAccountBtn" ).click(function () {
             $("#change_zillow_account").submit();
         });
+
+        setInterval(function() {
+            $.ajax({
+                type:"POST",
+                url: {{route('user.check.bot')}},
+                data: {
+                    uid : {{Auth::user()->id}},
+                    _token: {{csrf_token()}}
+                },
+                success:function(response){
+                    console.log(response);
+                    if(response) {
+                        if(response.status) {
+                            swal("Success!", "Messages are sent!", "success");
+                        }
+                    }
+                },
+            })
+        }, 500);
     </script>
 @endsection

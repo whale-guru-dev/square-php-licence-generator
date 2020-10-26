@@ -241,7 +241,8 @@ class HomeController extends Controller
                 'num_msg' => $request['num_msg'],
                 'msg' => $request['pre_msg'],
                 'blacklist_words' => $request['exclusive_words'],
-                'run' => false
+                'run' => false,
+                'isCheck' => false
             ]);
         } else {
             $request->validate([
@@ -261,13 +262,14 @@ class HomeController extends Controller
                 'num_msg' => $request['num_msg'],
                 'msg' => $request['pre_msg'],
                 'blacklist_words' => $request['exclusive_words'],
-                'run' => false
+                'run' => false,
+                'isCheck' => false
             ]);
         }
 
 
         if ($user['cookies']) {
-            return back()->with('success', 'Your request for run bot requested. We will email you when your bot successfully run.');
+            return back()->with('success', 'It\'s sending messages');
         } else {
             return back()->with('alert', "Your account is not active yet.  We will email you when your account is active and approved.");
         }
@@ -281,7 +283,8 @@ class HomeController extends Controller
 
         $botInfoForUser->update([
             'zillow_username' => '',
-            'zillow_password' => ''
+            'zillow_password' => '',
+            'isCheck' => false
         ]);
 
         $user->update([
@@ -289,5 +292,24 @@ class HomeController extends Controller
         ]);
 
         return back()->with('success', 'You can change zillow account info.');
+    }
+
+    public function checkBotRun(Request $request)
+    {
+        $user = $request['uid'];
+        $botInfoForUser = BotInfoForUsers::where('user_id', $user)->first();
+
+        if(!$botInfoForUser->isCheck) {
+            if($botInfoForUser->run) {
+                $botInfoForUser->update([
+                    'isCheck' => true
+                ]);
+                return response()->json(['status' => true, 'msg' => 'Messages are sent!']);
+            } else {
+                return response()->json(['status' => false]);
+            }
+        } else {
+            return response()->json(['status' => false]);
+        }
     }
 }
