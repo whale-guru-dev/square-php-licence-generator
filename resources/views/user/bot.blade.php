@@ -128,7 +128,6 @@
                     _token: "{{csrf_token()}}"
                 },
                 success:function(response){
-                    console.log(response);
                     if(response) {
                         if(response.status) {
                             swal("Success!", "Messages are sent!", "success");
