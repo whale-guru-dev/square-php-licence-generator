@@ -125,7 +125,7 @@
                 url: "{{route('user.check.bot')}}",
                 data: {
                     uid : {{Auth::user()->id}},
-                    _token: {{csrf_token()}}
+                    _token: "{{csrf_token()}}"
                 },
                 success:function(response){
                     console.log(response);
