@@ -269,7 +269,7 @@ class HomeController extends Controller
 
 
         if ($user['cookies']) {
-            return back()->with('success', 'It\'s sending messages');
+            return back()->with('success', "It's sending messages");
         } else {
             return back()->with('alert', "Your account is not active yet.  We will email you when your account is active and approved.");
         }

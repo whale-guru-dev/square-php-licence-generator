@@ -89,8 +89,6 @@ class RunBot extends Command
                     $each->update([
                        'run' => true
                     ]);
-
-                    dd($response);
                 }
             }
         }
