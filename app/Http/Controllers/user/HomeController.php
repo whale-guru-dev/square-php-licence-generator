@@ -224,10 +224,11 @@ class HomeController extends Controller
 
     public function runBot(Request $request)
     {
-        dd($request);
         $user = Auth::user();
         $botInfoForUser = BotInfoForUsers::where('user_id', $user->id)->first();
         if ($botInfoForUser) {
+
+            dd($botInfoForUser);
             $request->validate([
                 'zillow_username' => [
                     'required',
