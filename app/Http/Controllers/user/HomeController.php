@@ -227,8 +227,6 @@ class HomeController extends Controller
         $user = Auth::user();
         $botInfoForUser = BotInfoForUsers::where('user_id', $user->id)->first();
         if ($botInfoForUser) {
-
-            dd($botInfoForUser);
             $request->validate([
                 'zillow_username' => [
                     'required',
@@ -268,7 +266,7 @@ class HomeController extends Controller
                 'isCheck' => false
             ]);
         }
-
+dd($user);
 
         if ($user['cookies']) {
             return back()->with('success', "It's sending messages");
