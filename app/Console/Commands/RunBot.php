@@ -84,11 +84,13 @@ class RunBot extends Command
                 curl_close($curl);
 
                 if ($err) {
-
+                    dd($err);
                 } else {
                     $each->update([
                        'run' => true
                     ]);
+
+                    dd($response);
                 }
             }
         }
