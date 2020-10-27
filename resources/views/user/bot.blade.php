@@ -110,18 +110,7 @@
         @csrf
     </form>
 
-    <div class="modal fade" id="msgSentModal" tabindex="-1" role="dialog" aria-labelledby=msgSentModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    Messages are sent!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 @endsection
 
 @section('js')
@@ -141,7 +130,7 @@
                 success:function(response){
                     if(response) {
                         if(response.status) {
-                            $("#msgSentModal").modal('show');
+                            swal("Success!", "Messages are sent!", "success");
                         }
                     }
                 },
