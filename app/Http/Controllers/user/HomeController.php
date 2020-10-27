@@ -269,7 +269,7 @@ class HomeController extends Controller
 
         if ($user['cookies']) {
 //            return back()->with('success', "It is sending messages");
-            return redirect('user.bot')->with('success', 'It is sending messages');
+            return redirect('bot')->with('success', 'It is sending messages');
         } else {
             return back()->with('alert', "Your account is not active yet.  We will email you when your account is active and approved.");
         }
