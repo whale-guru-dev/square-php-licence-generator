@@ -266,9 +266,9 @@ class HomeController extends Controller
                 'isCheck' => false
             ]);
         }
-dd($user);
 
         if ($user['cookies']) {
+            dd('test');
             return back()->with('success', "It's sending messages");
         } else {
             return back()->with('alert', "Your account is not active yet.  We will email you when your account is active and approved.");
