@@ -190,3 +190,8 @@ hr {
     background: black;
     margin-top: 50px;
 }
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
