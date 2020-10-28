@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Mail;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -64,9 +65,15 @@ class UserController extends Controller
         $this->validate($request,
             [
                 'name' => 'required|string|max:255',
+                'email' => [
+                    'required',
+                    'email',
+                    Rule::unique('users')->ignore($id),
+                ]
             ]);
 
         $user['name'] = $request->name;
+        $user['email'] = $request->email;
 
         if ($request->cookies)
             $user['cookies'] = $request['cookies'];
