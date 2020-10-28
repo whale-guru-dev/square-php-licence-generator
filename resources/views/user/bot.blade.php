@@ -90,7 +90,7 @@
 {{--                    </div>--}}
 
                     <div class="row text-center">
-                        <div class="col-md-6 col-md-offset-2">
+                        <div class="col-md-6 col-md-offset-3">
                             <button type="button" class="bt-text-area download-btn">
                                 Run
                             </button>
