@@ -14,7 +14,7 @@
             <div class="row contact-form-area wow fadeInUp justify-content-md-center" data-wow-delay="0.4s">
                 <div class="col-md-6 col-lg-6 col-sm-12">
                     <div class="contact-block">
-                        <form id="contactForm" method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="submit-button">
-                                        <button class="btn btn-common" id="form-submit" type="submit">Login</button>
+                                        <button class="btn btn-common" type="submit">Login</button>
                                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                                         <div class="clearfix"></div>
                                     </div>
