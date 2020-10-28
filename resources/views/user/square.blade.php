@@ -11,9 +11,9 @@
         window.locationId = "{{env('SQUARE_LOCATION')}}";
     </script>
 
-    <title>TheZWAR</title>
+    <title>Tablescrapes</title>
 
-    <link rel="shortcut icon" href="{{ asset('assets/favicon.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('shopifybot/img/favicon.jpg')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- link to the local SqPaymentForm initialization -->
@@ -24,7 +24,7 @@
 <body>
 <div class="container">
     <div class="logo text-center">
-        <img src="{{ asset('assets/logo.png') }}" width="50%"/>
+        <img src="{{asset('shopifybot/img/tablescrapes.png')}}" width="50%"/>
     </div>
 
     <div class="row">

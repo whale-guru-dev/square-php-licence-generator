@@ -5,7 +5,7 @@
         $colors = ['warning', 'success', 'info'];
     @endphp
 
-    <div class="container">
+    <div class="container main-container">
 
         <div class="starter-template">
             <h1>Tablescrapes</h1>

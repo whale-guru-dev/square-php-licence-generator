@@ -4,7 +4,7 @@
     @php
     $colors = ['warning', 'success', 'info', 'primary', 'danger'];
     @endphp
-    <div class="container">
+    <div class="container main-container">
 
         <div class="starter-template">
             <h1>Subscribe plans</h1>

@@ -1,7 +1,7 @@
 @extends('layouts.user')
 
 @section('content')
-    <div class="container">
+    <div class="container main-container">
         <div class="starter-template">
             <h1>Profile Information</h1>
             <p class="lead">Please Check your profile.</p>
