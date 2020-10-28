@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input name="password_confirmation" type="password" placeholder="Password" id="msg_subject" class="form-control" required data-error="Please enter your password">
+                                        <input name="password_confirmation" type="password" placeholder="Confirmation Password" id="msg_subject" class="form-control" required data-error="Please enter your confirmation password">
 
                                         <p class="text-right">Already have an account? <a href="{{route('login')}}">Click Here</a></p>
                                     </div>
