@@ -48,6 +48,11 @@ hr {
     min-height: 80px;
     display: flex;
     align-items: center;
+    background: #137ed9;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a {
+    background-image: linear-gradient(to bottom,#0a508c 0,#0a508c 100%) !important;
 }
 
 .navbar-brand {

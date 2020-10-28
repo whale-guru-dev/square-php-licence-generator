@@ -53,6 +53,12 @@
             </div><!--/.nav-collapse -->
         </div>
     </nav>
+
+    <div class="container">
+        <div class="row text-center">
+            <img class="img-fluid" src="{{asset('shopifybot/img/tablescrapes.png')}}" alt="">
+        </div>
+    </div>
 @endif
 
 @yield('content')
