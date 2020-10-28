@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>ZILLOWAR</title>
 
-    <link rel="shortcut icon" href="{{ asset('assets/favicon.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('shopifybot/img/favicon.jpg')}}">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{route('user.home')}}">
-                    <img src="{{ asset('assets/logo.png') }}" style="max-height: 160px; max-width: 100px;" class="img-responsive">
+                    <img src="{{asset('shopifybot/img/logo.png')}}" style="max-height: 160px; max-width: 100px;" class="img-responsive">
                 </a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
