@@ -1,206 +1,69 @@
-@extends('layouts.user')
+@extends('layouts.shopifybot-auth')
 
 @section('content')
-	<style>
-	@media (max-width: 700px) {
-		img {
-			width: 85%;
-		}
-	}
-	</style>
-	<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5f5b0d3ef0e7167d000f547d/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-    <div class="step-one">
+    <!-- Contact Section Start -->
+    <section id="contact" class="section-padding">
         <div class="container">
-            <div class="logo text-center">
-                <a href="/"><img src="{{ asset('assets/logo.png') }}" width="50%"/></a>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12  text-center">
-                    <h2 class="h2">Step 1. Download Zillow AR and Obtain Mac Address</h2>
-                    {{--                <h6 class="h6 step-content">Download Zillow AR and Obtain Mac Address</h6>--}}
-                </div>
-            </div>
-
-            <div class="row text-center">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <h2 class="h2" style="text-align: center;">
-                        <span style="color: rgb(231, 76, 60); -webkit-text-fill-color: rgb(231, 76, 60);">DO NOT DOWNLOAD UNTIL YOU WATCH THE "</span>HOW
-                        TO DOWNLOAD VIDEO<span
-                            style="color: rgb(231, 76, 60); -webkit-text-fill-color: rgb(231, 76, 60);">"</span></h2>
-                </div>
-            </div>
-
-            <div class="row text-center">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" width="759px" height="553px"
-                                src="https://www.youtube.com/embed/itBEXjf1Dck"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen="allowfullscreen"
-                                style="border-radius: 0px; border: 0px none rgb(0, 0, 0);"></iframe>
+            <div class="row justify-content-md-center">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Sign Up</h2>
                     </div>
                 </div>
             </div>
+            <div class="row contact-form-area wow fadeInUp justify-content-md-center" data-wow-delay="0.4s">
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                    <div class="contact-block">
+                        <form id="contactForm" method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"  value="{{ old('name') }}" placeholder="Name" required data-error="Please enter your name">
 
-            <div class="row text-center">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <h6 class="h6">
-                        <span style="color: rgb(231, 76, 60); -webkit-text-fill-color: rgb(231, 76, 60);"><strong>Do Not Click Download Until You Watch The How To Download Video</strong></span>
-                    </h6>
-                </div>
-            </div>
+                                        @error('name')
+                                        <div class="help-block with-errors">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required data-error="Please enter your email">
 
-            <div class="row text-center">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <a href="{{url('/download/ZillowAR.rar')}}" rel="noreferrer" target="_blank" class="bt-text-area download-btn">DOWNLOAD
-                        ZILLOW AR</a>
-                </div>
-            </div>
-        </div>
-    </div>
+                                        @error('email')
+                                        <div class="help-block with-errors">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input name="password" type="password" placeholder="Password" id="msg_subject" class="form-control @error('password') is-invalid @enderror" required data-error="Please enter your password">
 
+                                        @error('password')
+                                        <div class="help-block with-errors">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input name="password_confirmation" type="password" placeholder="Password" id="msg_subject" class="form-control" required data-error="Please enter your password">
 
-    <div class="step-two">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12  text-center">
-                    <h2 class="h2">Step 2. Return To This Page, Fill Out Form & Complete Registration</h2>
-                    {{--                <h6 class="h6 step-content">Return To This Page, Fill Out Form & Complete Registration</h6>--}}
-                </div>
-            </div>
-
-            <br/>
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                       name="name" value="{{ old('name') }}" required autocomplete="name">
-
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                                        <p class="text-right">Already have an account? <a href="{{route('login')}}">Click Here</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="submit-button">
+                                        <button class="btn btn-common" id="form-submit" type="submit">Submit</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                       name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-{{--                        <div class="form-group row">--}}
-{{--                            <label for="email"--}}
-{{--                                   class="col-md-4 col-form-label text-md-right">{{ __('Mac Address') }}</label>--}}
-
-{{--                            <div class="col-md-6">--}}
-{{--                                <input id="mac" type="text" class="form-control @error('mac') is-invalid @enderror"--}}
-{{--                                       name="mac" value="{{ old('mac') }}" required autocomplete="mac">--}}
-
-{{--                                @error('mac')--}}
-{{--                                <span class="invalid-feedback" role="alert">--}}
-{{--                                    <strong>{{ $message }}</strong>--}}
-{{--                                </span>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-                        <div class="form-group row">
-                            <label for="password"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password"
-                                       class="form-control @error('password') is-invalid @enderror" name="password"
-                                       required autocomplete="new-password">
-
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control"
-                                       name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row text-center">
-                            <div class="col-md-12">
-                                <button type="submit" class="bt-text-area download-btn">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-
-                            <div class="col-md-12">
-                                If you already have an account, please <a href="{{route('login')}}">log in</a> here.
-                            </div>
-                        </div>
-
-                        <br/>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <section id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6 footer-contact-info">
-                <!--<p class="text-uppercase blue-text footer-contact-info_title">CONTACT US</p>
-
-                    <p class="footer-contact-info_content">26, Lane Street New York, USA</p>
-
-                    <p class="footer-contact-info_content">9AM - 7PM Mon - Sat</p>
-
-                    <p class="footer-contact-info_content">info@company.net +55 11 3256.9856</p>-->
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Contact Section End -->
 @endsection
