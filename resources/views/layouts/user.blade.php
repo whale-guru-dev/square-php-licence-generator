@@ -62,8 +62,7 @@
         </div>
     </nav>
 
-    <br/>
-    <div class="container">
+    <div class="container bg-logo-container">
         <div class="row text-center">
             <div class="col-md-3"></div>
             <div class="col-md-6">

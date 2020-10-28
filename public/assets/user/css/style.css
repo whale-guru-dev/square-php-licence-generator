@@ -195,3 +195,7 @@ hr {
     max-width: 100%;
     height: auto;
 }
+
+.bg-logo-container {
+    margin-top: 80px;
+}
