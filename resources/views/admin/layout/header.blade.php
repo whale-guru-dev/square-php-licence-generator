@@ -4,7 +4,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo">
             <a href="{{url('admin/home')}}">
-             <img src="{{asset('shopifybot/img/logo.png')}}" style="max-height: 16; max-width: 100px;" class="img-responsive">
+             <img src="{{asset('shopifybot/img/logo.png')}}" style="margin-top: 10px;" class="img-responsive">
          </a>
          <div class="menu-toggler sidebar-toggler"> </div>
      </div>
