@@ -90,7 +90,7 @@
 {{--                    </div>--}}
 
                     <div class="row text-center">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-md-offset-2">
                             <button type="button" class="bt-text-area download-btn">
                                 Run
                             </button>
@@ -120,22 +120,22 @@
             $("#change_zillow_account").submit();
         });
 
-        setInterval(function() {
-            $.ajax({
-                type:"POST",
-                url: "{{route('user.check.bot')}}",
-                data: {
-                    uid : {{Auth::user()->id}},
-                    _token: "{{csrf_token()}}"
-                },
-                success:function(response){
-                    if(response) {
-                        if(response.status) {
-                            swal("Success!", "Messages are sent!", "success");
-                        }
-                    }
-                },
-            })
-        }, 1000);
+        {{--setInterval(function() {--}}
+        {{--    $.ajax({--}}
+        {{--        type:"POST",--}}
+        {{--        url: "{{route('user.check.bot')}}",--}}
+        {{--        data: {--}}
+        {{--            uid : {{Auth::user()->id}},--}}
+        {{--            _token: "{{csrf_token()}}"--}}
+        {{--        },--}}
+        {{--        success:function(response){--}}
+        {{--            if(response) {--}}
+        {{--                if(response.status) {--}}
+        {{--                    swal("Success!", "Messages are sent!", "success");--}}
+        {{--                }--}}
+        {{--            }--}}
+        {{--        },--}}
+        {{--    })--}}
+        {{--}, 1000);--}}
     </script>
 @endsection
