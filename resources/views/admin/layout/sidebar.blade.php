@@ -37,13 +37,13 @@
                             <span class="title">Users</span>
                         </a>
                     </li>
-                    <li class="nav-item @if(request()->path() == 'admin/bot-info') active open
-                    @endif">
-                        <a href="{{route('bot.info')}}" class="nav-link ">
-                            <i class="fa fa-link"></i>
-                            <span class="title">Bot Info</span>
-                        </a>
-                    </li>
+{{--                    <li class="nav-item @if(request()->path() == 'admin/bot-info') active open--}}
+{{--                    @endif">--}}
+{{--                        <a href="{{route('bot.info')}}" class="nav-link ">--}}
+{{--                            <i class="fa fa-link"></i>--}}
+{{--                            <span class="title">Bot Info</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                 </ul>
             </li>
 
