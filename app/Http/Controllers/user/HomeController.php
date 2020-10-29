@@ -227,6 +227,10 @@ class HomeController extends Controller
         $user = Auth::user();
         $botInfoForUser = BotInfoForUsers::where('user_id', $user->id)->first();
         if ($botInfoForUser) {
+            if(!$botInfoForUser->run) {
+                return back()->with('alert', "Currently the bot is running.");
+            }
+
             $request->validate([
                 'zillow_username' => [
                     'required',
