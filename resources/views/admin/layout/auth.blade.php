@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Licence generator | Admin Login</title>
+    <title>Tablescrapes | Admin Login</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta content="" name="description"/>
@@ -29,7 +29,7 @@
     <!-- BEGIN PAGE LEVEL STYLES -->
     <link href="{{ asset('assets/admin/pages/css/login.min.css') }}" rel="stylesheet" type="text/css"/>
 
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/icon.png') }}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('shopifybot/img/favicon.jpg')}}">
 </head>
 <!-- END HEAD -->
 
@@ -37,7 +37,7 @@
 <div class="menu-toggler sidebar-toggler"></div>
 
 <div class="logo">
-    <img src="{{ asset('assets/logo.png') }}" width="15%"/>
+    <img src="{{asset('shopifybot/img/tablescrapes.png')}}" width="15%"/>
 </div>
 <div class="content">
 

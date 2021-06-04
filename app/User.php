@@ -4,6 +4,7 @@ namespace App;
 
 use App\Model\Licences;
 use App\Model\Transactions;
+use App\Model\BotInfoForUsers;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -20,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'mac','password',
+        'name', 'email','password', 'cookies'
     ];
 
     /**
@@ -48,5 +49,9 @@ class User extends Authenticatable
     public function transactions()
     {
         return $this->hasMany(Transactions::class, 'user_id');
+    }
+
+    public function botInfoForUser() {
+        return $this->hasOne(BotInfoForUsers::class, 'user_id');
     }
 }

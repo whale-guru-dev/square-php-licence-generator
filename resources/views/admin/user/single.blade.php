@@ -11,8 +11,8 @@
                             <span class="caption-subject font-green bold uppercase">User information</span>
                             <h5>Username: <b>{{ $user->name }}</b></h5>
                             <p>Email: <b>{{$user->email}}</b></p>
-                            <p>Plan: <b>{{$user->licence->plan->name}}</b></p>
-                            <p>Expired: <b>{{$user->licence->expired}}</b></p>
+                            <p>Plan: <b>{{$user->licence && $user->licence->plan && $user->licence->plan->name}}</b></p>
+                            <p>Expired: <b>{{$user->licence && $user->licence->expired}}</b></p>
                             @php
                             $paid = \App\Model\Transactions::where('user_id', $user->id)->sum('amount');
                             @endphp
@@ -43,7 +43,11 @@
                                         <input type="text" name="email" class="form-control input-sz"
                                                value="{{$user->email}}">
                                     </div>
-
+                                    <div class="form-group col-md-4">
+                                        <label>Cookies</label>
+                                        <input type="text" name="cookies" class="form-control input-sz"
+                                               value="{{$user->cookies}}">
+                                    </div>
                                     <hr/>
                                     <button type="submit" class="btn btn-lg btn-primary btn-block">Update</button>
 

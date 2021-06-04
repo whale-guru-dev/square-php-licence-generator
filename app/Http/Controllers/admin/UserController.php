@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\CookieActivated;
 use App\Model\Licences;
 use App\Model\Plans;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Mail;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -42,7 +45,7 @@ class UserController extends Controller
             ]);
 
         $users = User::where('name', 'like', '%' . $request->search . '%')->orWhere('email', 'like', '%' . $request->search . '%')->get();
-        if(!$users)
+        if (!$users)
             $users = [];
         return view('admin.user.search', compact('users'));
 
@@ -61,13 +64,25 @@ class UserController extends Controller
 
         $this->validate($request,
             [
-                'name' => 'required|string|max:255'
+                'name' => 'required|string|max:255',
+                'email' => [
+                    'required',
+                    'email',
+                    Rule::unique('users')->ignore($id),
+                ]
             ]);
 
         $user['name'] = $request->name;
+        $user['email'] = $request->email;
+
+        if ($request->cookies)
+            $user['cookies'] = $request['cookies'];
 
         $user->save();
 
+        if ($request['cookies']) {
+            Mail::to($user)->send(new CookieActivated($user));
+        }
 
         return back()->withSuccess('User Profile Updated Successfuly');
     }
@@ -83,17 +98,27 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required | email | unique:users',
-            'mac' => 'required | unique:users',
+//            'mac' => 'required | unique:users',
             'password' => 'required | min:5',
             'plan' => 'required'
         ]);
 
-        $user = User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'mac' => $request['mac'],
-            'password' => Hash::make($request['password']),
-        ]);
+        if ($request['cookies']) {
+            $user = User::create([
+                'name' => $request['name'],
+                'email' => $request['email'],
+//            'mac' => $request['mac'],
+                'cookies' => json_encode($request['cookies'],JSON_UNESCAPED_SLASHES),
+                'password' => Hash::make($request['password']),
+            ]);
+        } else {
+            $user = User::create([
+                'name' => $request['name'],
+                'email' => $request['email'],
+//            'mac' => $request['mac'],
+                'password' => Hash::make($request['password']),
+            ]);
+        }
 
         $pid = $request['plan'];
         $plan = Plans::find($pid);

@@ -1,6 +1,6 @@
  <head>
     <meta charset="utf-8" />
-    <title>Licence generator - Admin</title>
+    <title>Tablescrapes - Admin</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
@@ -30,7 +30,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
     <!-- END THEME LAYOUT STYLES -->
-    <link rel="shortcut icon" href="{{ asset('assets/favicon.jpg') }}" />
+     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('shopifybot/img/favicon.jpg')}}">
 
     <link href="{{ asset('assets/admin/global/plugins/jquery-file-upload/css/jquery.fileupload.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/admin/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css') }}" rel="stylesheet" type="text/css" />

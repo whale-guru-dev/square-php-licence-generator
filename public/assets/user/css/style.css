@@ -48,6 +48,11 @@ hr {
     min-height: 80px;
     display: flex;
     align-items: center;
+    background: #137ed9;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a {
+    background-image: linear-gradient(to bottom,#0a508c 0,#0a508c 100%) !important;
 }
 
 .navbar-brand {
@@ -184,4 +189,25 @@ hr {
     color: white;
     background: black;
     margin-top: 50px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.bg-logo-container {
+    margin-top: 80px;
+}
+
+.main-container {
+    margin-bottom: 30px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white !important;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: #9d9d9d !important;
 }

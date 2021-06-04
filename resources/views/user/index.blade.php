@@ -5,10 +5,10 @@
         $colors = ['warning', 'success', 'info'];
     @endphp
 
-    <div class="container">
+    <div class="container main-container">
 
         <div class="starter-template">
-            <h1>TheZWAR</h1>
+            <h1>Tablescrapes</h1>
             <p class="lead">Your Current Plan.</p>
         </div>
 

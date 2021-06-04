@@ -31,9 +31,9 @@
                         <th>
                             Email
                         </th>
-                        <th>
-                            Mac Address
-                        </th>
+{{--                        <th>--}}
+{{--                            Mac Address--}}
+{{--                        </th>--}}
                         <th>
                              Plan
                         </th>
@@ -51,9 +51,9 @@
                         <td>
                             {{$user->email}}
                         </td>
-                        <td>
-                            {{$user->mac}}
-                        </td>
+{{--                        <td>--}}
+{{--                            {{$user->mac}}--}}
+{{--                        </td>--}}
                         <td>
                             {{$user->licence ?$user->licence->plan->name: ''}}
                         </td>
